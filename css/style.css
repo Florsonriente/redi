@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&family=Lobster&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/**/*{
+  list-style-type: none;
+  text-decoration: none;
+  padding:0;
+  margin: 0;
+  text-decoration: 0;
+  box-sizing: border-box;
+  color:black;
+  font-family: Montserrat;
+}
+h1{
+  font-weight: 100;
+  font-size: 5em;
+  padding:0em 3em;
+  text-align: center;
+}
+
+h2{
+font-weight: 400;
+font-size: 1.5em;
+z-index:2;
+}
+
+p{
+  font-weight: 400;
+}
+
+:root {
+  --innerwidth: 1400px;
+  --yellow: /* rgb(253, 216, 53);*/ #ebff00;
+  --blue: rgb(98, 0, 234);
+  --left-color: var(--dark);
+  --right-color: var(--yellow);
+  --white:white;
+}
+
+
+
+*{ cursor: inherit !important;}
+
+header{
+  display: none;
+}
+
+body{
+/* background: black;
+ position: relative;
+    height: 6500px;
+  */
+  overflow-x: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+.hero{
+    /*background-image: url(../nature/cjcurran.529_Natural_light_rays_casting_minimal_shadows_on_whit_831bf3d6-203c-4175-b2ab-c8a0714dc19d.png);*/
+    background-size: cover;
+    height: 100vh;
+    width: 50vw;
+    position: relative;
+    top: 0%; 
+    left: 50%;
+    position: fixed;
+    /*border:2px solid red;*/
+  }
+
+    .hero p{
+      position: absolute;
+      top: 50%;
+      left: -90%;
+      /*transform: translate(90%, 90%);*/
+    }
+
+.scrolledpage{
+  position: relative;
+    height: 4000px;
+    overflow-x: auto;
+}
+
+.block2{
+ /**/ transform: translateX(50vw);
+  position: fixed;
+  /*border:2px solid green;*/
+  height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+h2{
+  /*position: fixed;
+    transform: translateX(130vw);top: 15%;*/
+  /*white-space: nowrap;
+  overflow-x: auto;*/
+}
+
+.scrollerpics{
+
+  z-index:1;
+}
+
+.scrollerpics, .lessheadliners, .subblockpics{
+ /* top: 15%;
+  transform: translateX(130vw);
+  position: fixed;*/
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  flex-wrap: nowrap;
+ 
+ }
+
+
+.subblockpics > img:nth-child(3),
+.subblockpics > img:nth-child(6),
+.subblockpics > img:nth-child(9)
+ {
+  margin-right:50vw/*30em;*/
+}
+.lessheadliners> h2 {
+  margin-right:50vw/*  20em;*/
+  }
+.lessheadliners> h2:nth-child(2) {
+margin-right:50vw/*  20em;*/
+}
+
+
+.subblockpics > img:nth-child(5){
+  margin-bottom: 2em;
+}
+.subblockpics > img:nth-child(6){
+  margin-bottom: -1em;
+}
+
+.subblockpics > img:nth-child(1){
+margin-bottom: -3em;}
+
+.subblockpics > img:nth-child(3){
+margin-bottom: -2em;}
+
+.subblockpics:nth-child(2){
+ opacity:0;
+}
+
+.subblockpics:nth-child(3){
+  opacity:0;
+}
+
+
+.subblockpics > img{
+
+  
+  animation: .3s resizing ;
+  animation-timeline:scroll(root)/*view()*/; 
+ }
+ 
+
+
+@keyframes resizing {
+ 
+     0% {transform: scale(1);}
+     30% {transform: scale(1.2);}
+    60% {transform: scale(1);}
+    100% {transform: scale(0.8);}
+
+  }
+
+
+ /*TYPO EFFECT*/
+
+ .typoeffect {
+  font-size: 5em;
+  font-weight: 100;
+
+  /*height:100vh;*/
+  line-height: 1.3;
+  z-index:2;
+  display: block;
+	/*font-variation-settings: 'wght' 300, 'wdth' 85;*/
+
+   }
+
+   .typoeffect span{
+    transition: 400ms ease-out /*font-variation-settings*/;
+   }
+
+   .typoeffect span:hover{
+    font-weight:600;
+    width:85;
+  }
+  
+  .typoeffect span:has(+ span:hover),
+  .typoeffect span:hover + span {
+    font-weight:450;
+  }
+
+  /*CALCULATIONFORM*/
+
+  .calculationform{
+  
+    max-width: var(--innerwidth);
+    padding: 3em;
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    height: 100vh;
+    align-items: flex-start;
+    gap:5em;
+
+}
+
+.typoeffect{
+max-width:var(--innerwidth);
+height: 100vh;
+}
+
+#finalscore{
+    display: flex;
+    flex-direction: column;
+
+  }
+
+
+#scoreValue{
+  font-size: 15em;
+  font-weight: 400;
+}
