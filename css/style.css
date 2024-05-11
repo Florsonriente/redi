@@ -4,7 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
-/**/*{
+*{
   list-style-type: none;
   text-decoration: none;
   padding:0;
@@ -14,38 +14,21 @@
   color:black;
   font-family: Montserrat;
 }
-h1{
-  font-weight: 100;
-  font-size: 5em;
-  padding:0em 3em;
-  text-align: center;
-}
 
-h2{
-font-weight: 400;
-font-size: 1.5em;
-z-index:2;
-}
-
-p{
-  font-weight: 400;
-}
 
 :root {
-  --innerwidth: 1400px;
-  --yellow: /* rgb(253, 216, 53);*/ #ebff00;
-  --blue: rgb(98, 0, 234);
-  --left-color: var(--dark);
-  --right-color: var(--yellow);
+  --innerwidth: 1300px;
   --white:white;
+  --font-weight: 400;
+  --font-size: 1.5em;
+  --h1font-size: 5em;
+  --h1font-weight: 100;
+  --scores-font-size: 13em;
+  --scores-font-weight: 200;
 }
 
-
-
-*{ cursor: inherit !important;}
-
 header{
-  display: none;
+  /*display: none;*/
 }
 
 body{
@@ -60,6 +43,266 @@ body{
   align-content: center;
   align-items: center;
 }
+
+.project_start{
+  height:100vh;
+}
+
+.projet_intro{
+  height:100vh;
+  display: flex;
+  align-items: center;
+
+}
+
+/*AIR QUALITY PAGE*/
+.airqualitypage {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  position: relative;
+  height:70vh;
+  
+}
+
+#image_wrapper {
+  filter: invert(1);
+  filter: blur(9px);
+  position: absolute;
+  top:50%;
+  width: 100%;
+  z-index: -1;
+  width: 100%;
+  position: absolute;
+  transition: all 0.5s ease-in;
+  padding: 3em;
+ }
+
+
+.gauge {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+    background-size: cover;
+    margin-top: 1em;
+}
+
+.needle {
+  position: absolute;
+  width: 4px;
+  height: 100px;
+  background-color: red;
+  bottom: 50%;
+  left: calc(50% - 2px);
+  transform-origin: 50% 100%;
+  transform: rotate(0deg);
+  transition: transform 1s ease;
+}
+
+.reading {
+  margin-top: 20px;
+  font-weight: var(--font-weight);
+    font-size: var(--font-size);
+}
+
+
+
+
+
+
+/*CHECKBOXES*/
+input[type="checkbox"] {
+  -webkit-appearance: none; /* Remove default appearance */
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px; /* Set width */
+  height: 20px; /* Set height */
+  /*border: 2px solid black; /* Set border */
+  border-radius: 4px; /* Rounded corners */
+  outline: none; /* Remove focus outline */
+  cursor:pointer;
+}
+
+/* Styling radio button */
+input[type="radio"] {
+  -webkit-appearance: none; /* Remove default appearance */
+  -moz-appearance: none;
+  appearance: none;
+  width: 20px; /* Set width */
+  height: 20px; /* Set height */
+  border: 2px solid black; /* Set border */
+  border-radius: 50%; /* Circle shape */
+  outline: none; /* Remove focus outline */
+}
+
+/* Styling slider */
+input[type="range"] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 3px;
+  background: black;
+  outline: none;
+  border-radius: 10px;
+}
+
+/* Styling slider thumb */
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  background: black;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+
+/* Styling label */
+label {
+  display: inline-block;
+  margin-left: 5px; 
+}
+
+/* Styling checked state */
+input[type="checkbox"]:checked,
+input[type="radio"]:checked {
+  background-color: black; /* Change background color when checked */
+}
+
+/*
+[type=checkbox] {
+  width: 2rem;
+  height: 2rem;
+  color: dodgerblue;
+  vertical-align: middle;
+  -webkit-appearance: none;
+  background: none;
+  border: 0;
+  outline: 0;
+  flex-grow: 0;
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  transition: background 300ms;
+  cursor: pointer;
+}*/
+
+
+/* Pseudo element for check styling */
+
+[type=checkbox]::before {
+  content: "";
+  color: transparent;
+  display: block;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  border: 0;
+  background-color: transparent;
+  background-size: contain;
+  box-shadow: inset 0 0 0 1px #CCD3D8;
+}
+
+
+/* Checked */
+
+[type=checkbox]:checked {
+  background-color: currentcolor;
+}
+
+[type=checkbox]:checked::before/*,
+ul li.checked::before*/ {
+  box-shadow: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Cpath d='M15.88 8.29L10 14.17l-1.88-1.88a.996.996 0 1 0-1.41 1.41l2.59 2.59c.39.39 1.02.39 1.41 0L17.3 9.7a.996.996 0 0 0 0-1.41c-.39-.39-1.03-.39-1.42 0z' fill='%23fff'/%3E %3C/svg%3E");
+}
+
+
+/* Disabled
+
+[type=checkbox]:disabled {
+  background-color: #CCD3D8;
+  opacity: 0.84;
+  cursor: not-allowed;
+} */
+
+
+/* IE 
+
+[type=checkbox]::-ms-check {
+  content: "";
+  color: transparent;
+  display: block;
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+  border: 0;
+  background-color: transparent;
+  background-size: contain;
+  box-shadow: inset 0 0 0 1px #CCD3D8;
+}
+
+[type=checkbox]:checked::-ms-check {
+  box-shadow: none;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Cpath d='M15.88 8.29L10 14.17l-1.88-1.88a.996.996 0 1 0-1.41 1.41l2.59 2.59c.39.39 1.02.39 1.41 0L17.3 9.7a.996.996 0 0 0 0-1.41c-.39-.39-1.03-.39-1.42 0z' fill='%23fff'/%3E %3C/svg%3E");
+}
+*/
+
+
+/*TYPOGRAPHY*/
+
+h1{
+  font-weight: (var(--font-weight));
+  font-size: (var(--h1font-size));
+  padding:0em 3em;
+  text-align: center;
+}
+
+h2, label, .calculationform span, #energyConsumptionValue, #energyConsumers, #city-input,
+#city-form > button{
+  font-weight: var(--font-weight);
+  font-size: var(--font-size);
+z-index:2;
+}
+
+p{
+  font-weight: (var(--font-weight));
+}
+
+
+
+/*BUTTONS*/
+
+#button_share, #button, #button_carbon_facts {
+
+  display: block;
+  margin: auto;
+  padding: 3em;
+  background-color: transparent;
+  width: 250px;
+  cursor: pointer;
+}
+
+#city-form > button{
+  cursor: pointer;
+}
+.get_saved_carbon{
+display: block;
+margin: auto;
+padding: 3em;
+background-color: transparent;
+width: 250px;
+cursor: pointer;}
+
+#button{
+  margin:0;
+}
+
 
 .hero{
     /*background-image: url(../nature/cjcurran.529_Natural_light_rays_casting_minimal_shadows_on_whit_831bf3d6-203c-4175-b2ab-c8a0714dc19d.png);*/
@@ -98,15 +341,9 @@ body{
     align-items: flex-start;
 }
 
-h2{
-  /*position: fixed;
-    transform: translateX(130vw);top: 15%;*/
-  /*white-space: nowrap;
-  overflow-x: auto;*/
-}
+
 
 .scrollerpics{
-
   z-index:1;
 }
 
@@ -129,8 +366,11 @@ h2{
  {
   margin-right:50vw/*30em;*/
 }
+
+
 .lessheadliners> h2 {
-  margin-right:50vw/*  20em;*/
+  margin-right:50vw/*  20em;*/;
+  /*margin-left: 30vw;*/
   }
 .lessheadliners> h2:nth-child(2) {
 margin-right:50vw/*  20em;*/
@@ -177,17 +417,24 @@ margin-bottom: -2em;}
 
   }
 
-
+  .calculationpage{
+    /*height:100vh;*/
+    display: flex;
+    flex-direction: column;
+    max-width: var(--innerwidth);
+    margin: auto;
+  }
  /*TYPO EFFECT*/
 
  .typoeffect {
-  font-size: 5em;
-  font-weight: 100;
-
-  /*height:100vh;*/
+  font-size: var(--h1font-size);
+  font-weight: var(--h1font-weight);
   line-height: 1.3;
   z-index:2;
   display: block;
+  max-width:(var(--innerwidth));
+  margin: auto;
+  margin-bottom: 1em;
 	/*font-variation-settings: 'wght' 300, 'wdth' 85;*/
 
    }
@@ -209,31 +456,391 @@ margin-bottom: -2em;}
   /*CALCULATIONFORM*/
 
   .calculationform{
-  
-    max-width: var(--innerwidth);
+   
+    width:var(--innerwidth);
     padding: 3em;
-    display: flex;
-    flex-direction: row;
-    /* justify-content: center; */
-    height: 100vh;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    /*grid-template-rows: 3fr 1fr;*/
     align-items: flex-start;
     gap:5em;
-
 }
 
-.typoeffect{
-max-width:var(--innerwidth);
-height: 100vh;
-}
+
 
 #finalscore{
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-size: contain;
+  background-position: left;
+  background-image: url(../nature/0b0f58277596a1f7d72361757010ca38.jpg);
+  border-radius: 140px;
+  background-repeat: no-repeat;
+ 
 
-  }
-
+}
 
 #scoreValue{
-  font-size: 15em;
-  font-weight: 400;
+  font-size: var(--scores-font-size);
+  font-weight: var(--scores-font-weight);
 }
+
+
+ /*GRID PAGE*/
+ .naturegridpage{
+max-width: var(--innerwidth);
+margin: auto;
+
+  margin-bottom: -10em;
+}
+
+/*RANDOM CARBON FACTS*/
+
+.carbonfactspage{
+  width: var(--innerwidth);
+}
+
+
+#button_carbon_facts {
+
+display: block;
+margin: auto;
+padding: 3em;
+background-color: transparent;
+position: absolute;
+  bottom: 10%;
+  left: 75%;
+  width: 250px;
+}
+
+
+.carbontext{
+width: var(--innerwidth);
+text-align: center;
+padding: 3em;
+background-image: url(../nature/gabbea_photo_of_a_white_wall_with_a_few_soft_shadows_coming_fro_781ae67e-9cda-455e-9d08-20d1bd52a9e1.png);
+background-size: cover;
+height:500px;
+background-position: center;
+position: relative;
+
+}
+
+.carbontext h2{
+width:70%;
+text-align: left;
+font-size: 2em;
+}
+
+body > div.carbonfactspage > h2:nth-child(3){
+  padding: 3em;
+  text-align: center;
+}
+
+
+/*IMPACT PAGE*/
+.carbonfacts{
+/*border: 1px solid black;*/
+    background-image: url(../nature/frame.jpg);
+    background-size: cover;
+    background-position: center;
+    width: 200px;
+    padding: 2em 0.5em;
+  }
+
+.impactpage{
+  /*  height:100vh;*/
+    width:var(--innerwidth);
+    padding: 3em;
+    text-align: center;
+  }
+  
+  .example{
+    display: grid;
+    /*grid-template-columns: 1fr 1fr;*/
+    /*min-height: 1430px;*/
+
+  }
+  
+  .activities_all {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5em;
+    padding:3em;
+    justify-items: start;
+    align-items: center;
+    align-content: center;
+  }
+
+ 
+  .impact{
+  display: flex;
+  gap: 4em;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  padding:3em;
+  position: relative;
+  justify-content: center;
+  }
+
+ div.activities_all > div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  align-content: flex-start;
+  flex-wrap: nowrap;
+ }
+
+  .activities_all label{
+
+    text-align: left;
+  }
+  
+  body > div.impactpage > h2:nth-child(2){
+    padding-bottom:2em;
+  }
+  
+
+  #explanation1, #explanation2, 
+  #explanation3, #explanation4,
+  #explanation5, #explanation6 {
+    display: none;
+  }
+
+  .explanations{
+    display: flex;
+    background: red;
+    gap: 2em;
+
+    height: 300px;
+    overflow-y: scroll;
+    padding: 2em;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    height:   1420px;;
+  }
+
+  .close_explanations, closeToDoListTask{
+    font-size: var(--font-size);
+    position: absolute;
+    right: 2%;
+   
+    cursor: pointer;
+  }
+
+  .button_read_explanation{
+    cursor: pointer;
+  }
+
+  h5 .show_saved_carbon {
+    font-size: var(--scores-font-size);
+    font-weight: var(--scores-font-weight);
+   
+    min-height: 500px;
+    background-size: contain;
+    background-repeat: no-repeat;
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    background-position: bottom;
+    margin-top:0.5em;
+
+    background-image: url(../nature/0b0f58277596a1f7d72361757010ca38.jpg);
+    border-radius: 140px;
+    background-repeat: no-repeat;
+  }
+
+  body > div.carbonfactspage > h2:nth-child(1){
+    text-align: unset;
+    padding: 3em;
+  }
+
+  /*PLANET PAGE*/
+  
+
+.planet{
+    
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; 
+  height: 100vh;*/
+  align-items: flex-start;
+  gap:5em;
+  position: relative;
+  align-items: center;
+}
+
+.slider{
+  position:absolute;
+  order: -1!important;
+}
+/*.slider label{
+  padding-left: 3em;
+}*/
+.slider input{
+  width: 30vw;
+    margin: auto;
+  display: block;
+  margin-bottom: 1em;
+  margin-top: 1em;
+}
+body > div.planetpage > div > div > span:nth-child(5){
+  position: absolute;
+    right: 0;
+}
+body > div.planetpage > div > div > span:nth-child(4){
+  right: 0;
+    position: absolute;
+}
+
+
+
+
+/*PLANET BLOCK*/
+
+.picture{
+  position:absolute;
+  top: 0;
+  left: 0;
+ 
+  padding:3em;
+  margin-top:2em;
+}
+#planetpicgreen,
+#planetpicblack{
+  position: absolute;
+  top: 5em;
+  left: 0;
+ /* width:var(--innerwidth);*/
+ width: 100vw;
+
+
+}
+#planetpicblack
+{opacity: 100%;
+  height: 500px;
+  object-fit: cover;
+}
+
+#planetpicgreen
+{opacity: 0%;
+  height: 500px;
+  object-fit: cover;
+}
+
+.planetpage{
+  min-height: 800px;
+}
+
+/*TO DO LIST*/
+
+.to_do_list_page{
+  height:100vh;
+  width:var(--innerwidth);
+
+}
+
+.to_do_app{
+ width: var(--innerwidth);
+  margin:2em auto;
+  
+}
+
+.to_do_app h2{
+  color:black;
+  display: flex;
+  align-items: center;
+}
+
+.row{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap:1em;
+}
+
+.input{
+  flex:1;
+
+}
+
+.to_do_list_button{
+
+}
+
+ul li, #input_box{
+  user-select: none;
+  cursor: pointer;
+position: relative;
+font-weight: var(--font-weight);
+    font-size: var(--font-size);
+    padding:1em 2em;
+display: flex;
+flex-direction: row;
+align-items: center;
+}
+
+/**/ul li::before{
+  content:'';
+  position:absolute;
+  color: transparent;
+  display: block;
+  /*width: inherit;
+  height: inherit;
+  background-color: black;*/
+
+  left:0;
+  appearance: none;
+  width: 20px; /* Set width */
+  height: 20px; /* Set height */
+  /*border: 2px solid black; /* Set border */
+  border-radius: 4px; /* Rounded corners */
+  outline: none; /* Remove focus outline */
+  cursor:pointer;
+
+}
+
+
+#list_container{
+  display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+ul li.checked{
+ 
+  height: 200px;
+    width: 600px;
+    margin: 2em;
+    background-size: cover;
+    background-position: center ceneter;
+}
+
+ul li.checked::before{
+ /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Cpath d='M15.88 8.29L10 14.17l-1.88-1.88a.996.996 0 1 0-1.41 1.41l2.59 2.59c.39.39 1.02.39 1.41 0L17.3 9.7a.996.996 0 0 0 0-1.41c-.39-.39-1.03-.39-1.42 0z' fill='%23fff'/%3E %3C/svg%3E");*/
+
+
+}
+
+/*#list_container > li > closetodolisttask{
+  position:absolute;
+  right:0;
+  color:red;
+  text-align: center;
+}*/
+.to_do_list_button{
+  font-size: var(--font-size);
+  display: block;
+  padding:1em;
+  background-color: transparent;
+  width: 150px;
+  cursor: pointer;
+}
+
+
