@@ -42,6 +42,7 @@ body{
   justify-content: center;
   align-content: center;
   align-items: center;
+  border:4px solid red;
 }
 
 .project_start{
@@ -63,7 +64,7 @@ body{
   align-items: center;
   margin: 0;
   position: relative;
-  height:70vh;
+  
   
 }
 
@@ -71,11 +72,11 @@ body{
   filter: invert(1);
   filter: blur(9px);
   position: absolute;
-  top:50%;
+ 
   width: 100%;
   z-index: -1;
   width: 100%;
-  position: absolute;
+  top:0;
   transition: all 0.5s ease-in;
   padding: 3em;
  }
@@ -271,7 +272,7 @@ z-index:2;
 }
 
 p{
-  font-weight: (var(--font-weight));
+  font-weight: var(--font-weight);
 }
 
 
@@ -302,6 +303,8 @@ cursor: pointer;}
 #button{
   margin:0;
 }
+/*HERO PAGE STYLING*/
+
 
 
 .hero{
@@ -426,6 +429,11 @@ margin-bottom: -2em;}
   }
  /*TYPO EFFECT*/
 
+ .projet_intro .typoeffect{
+  height:100vh;
+ }
+
+
  .typoeffect {
   font-size: var(--h1font-size);
   font-weight: var(--h1font-weight);
@@ -492,7 +500,6 @@ margin-bottom: -2em;}
 max-width: var(--innerwidth);
 margin: auto;
 
-  margin-bottom: -10em;
 }
 
 /*RANDOM CARBON FACTS*/
@@ -741,7 +748,7 @@ body > div.planetpage > div > div > span:nth-child(4){
 /*TO DO LIST*/
 
 .to_do_list_page{
-  height:100vh;
+ /* height:100vh;*/
   width:var(--innerwidth);
 
 }
@@ -774,7 +781,7 @@ body > div.planetpage > div > div > span:nth-child(4){
 
 }
 
-ul li, #input_box{
+#list_container p, #input_box{
   user-select: none;
   cursor: pointer;
 position: relative;
@@ -786,7 +793,7 @@ flex-direction: row;
 align-items: center;
 }
 
-/**/ul li::before{
+/**/#list_container p::before{
   content:'';
   position:absolute;
   color: transparent;
@@ -813,27 +820,22 @@ align-items: center;
     justify-content: center;
 }
 
-ul li.checked{
+p.checked{
  
   height: 200px;
     width: 600px;
     margin: 2em;
     background-size: cover;
-    background-position: center ceneter;
+    background-position: center ;
+    color:white;
 }
 
-ul li.checked::before{
- /* background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E %3Cpath d='M15.88 8.29L10 14.17l-1.88-1.88a.996.996 0 1 0-1.41 1.41l2.59 2.59c.39.39 1.02.39 1.41 0L17.3 9.7a.996.996 0 0 0 0-1.41c-.39-.39-1.03-.39-1.42 0z' fill='%23fff'/%3E %3C/svg%3E");*/
-
-
-}
-
-/*#list_container > li > closetodolisttask{
-  position:absolute;
-  right:0;
+p.checked #text{
   color:red;
-  text-align: center;
-}*/
+  white-space: normal;
+}
+
+
 .to_do_list_button{
   font-size: var(--font-size);
   display: block;

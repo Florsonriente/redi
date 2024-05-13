@@ -1,3 +1,41 @@
+7/////ON SCROLL
+
+$(document).on('scroll', function(){
+    // Adjust speed for .block2
+    $('.block2, .hero').css({
+        "left": Math.max(-(1.3*window.scrollY)) + "px",
+        "transition": "left 1.2s ease"
+    });
+
+    $(".hero img").css({
+      "opacity": "0%",
+      "transition": "opacity 1.2s ease"
+    });
+
+   $(".hero p").css({
+      "left": "10%",
+      "transition": "left 1.2s ease",
+      "opacity": "100%",
+    });
+
+
+    $(".subblockpics:nth-child(2").css({
+      "opacity": "100%",
+       "transition": " 1.2s ease",
+      "transition-delay": "0.5s ease",
+      "margin-left":"-30vw",
+    });
+    $(".subblockpics:nth-child(3").css({
+      "opacity": "100%",
+      "margin-left":"-20vw",
+        "transition": " 1.2s ease",
+      "transition-delay": "0.5s ease"
+      
+    });/**/
+ 
+});
+
+
 // SEE ACTIVITIES IMPACT FUNCTION
 
 console.log("privetik")
@@ -138,17 +176,21 @@ function addTask(){
         alert ("Lets think out some task for u");
     }
     else {
-        let li = document.createElement("li");
-        li.innerHTML= inputBox.value;
-        listContainer.appendChild(li);
+        let p = document.createElement("p");
+        p.innerHTML= inputBox.value;
+        listContainer.appendChild(p);
 
         let closeToDoListTask = document.createElement("closeToDoListTask");
         closeToDoListTask.innerHTML = "\u00d7";
-        li.appendChild(closeToDoListTask)
-        li.classList.add("checked");
-        li.style.background=toDoListBackgroundsSelector();
-        li.style.backgroundPosition="center";
-        li.style.backgroundSize="cover";
+        p.appendChild(closeToDoListTask)
+
+        p.classList.add("checked");
+        const deco = toDoListBackgroundsSelector();
+        p.style=deco.style;
+        p.size = deco.size;
+        p.color = deco.color;
+      
+
     }
     inputBox.value='';
     saveData();
@@ -189,16 +231,43 @@ function showTask(){
 
 /////TO DO LIST DIFFERENT BACKGROUNDS
 
-let toDoListBackgrounds = [
+/*let toDoListBackgrounds = [
     'url("./nature/ammonra_a_professional_white_zen_minimalist_aesthetic_desktop_w_f26dfeb7-278d-43a8-a87a-7dbba0c08202.png")',
     'url("./nature/dark_voyager_Create_a_highly_aesthetic_and_Instagram-worthy_ima_babcfd24-e26c-4b01-960c-19c414ffaac7.png")',
     'url("./nature/neuromur_Abstract_white_studio_background_for_product_presentat_4010bc83-3753-4f97-94fb-de8fbb231fb4.png")'
 ];
+*/
+const toDoListBackgrounds = [
+    {
+      style: "background: repeating-conic-gradient(from 45deg, #a8a398 0% 25%, #39513e 0% 50%)",
+      size: "background-size: 11px 11px",
+      color: "background-color: #a8a398"
+    },/*
+    {
+      style: "background: repeating-linear-gradient(45deg, transparent, transparent 26px, #849c0b 26px, #849c0b 52px)",
+      size: "background-size: 26px 26px",
+      color: "background-color: #556645"
+    },*/
+    {
+      style: "background: radial-gradient(circle, transparent 20%, #556645 20%, #556645 80%, transparent 80%, transparent) 0% 0% / 52px 52px, radial-gradient(circle, transparent 20%, #556645 20%, #556645 80%, transparent 80%, transparent) 26px 26px / 52px 52px, linear-gradient(#849c0b 2px, transparent 2px) 0px -1px / 26px 26px, linear-gradient(90deg, #849c0b 2px, #556645 2px) -1px 0px / 26px 26px #556645",
+      size: "background-size: 52px 52px, 52px 52px, 26px 26px, 26px 26px",
+      color: "background-color: #556645"
+    },
+    {
+        style: "background: radial-gradient(circle, transparent 20%, #a8a398 20%, #a8a398 80%, transparent 80%, transparent) 0% 0% / 52px 52px, radial-gradient(circle, transparent 20%, #a8a398 20%, #a8a398 80%, transparent 80%, transparent) 26px 26px / 52px 52px, linear-gradient(#849c0b 2px, transparent 2px) 0px -1px / 26px 26px, linear-gradient(90deg, #39513e 2px, #a8a398 2px) -1px 0px / 26px 26px #a8a398",
+        size: "background-size: 52px 52px, 52px 52px, 26px 26px, 26px 26px",
+        color: "background-color: #a8a398"
+      }/**/
+  ];
+
+
+
+
 
 
 function toDoListBackgroundsSelector(){
-    const randomToDoListBackground = Math.floor(Math.random() * toDoListBackgrounds.length);
-    return toDoListBackgrounds[randomToDoListBackground];
+    const index = Math.floor(Math.random() * toDoListBackgrounds.length);
+    return toDoListBackgrounds[index];
   }
 
 
