@@ -152,9 +152,3 @@ transform: scale(3);}
       overflow: hidden;
   
   }
-  @media only screen and (max-width: 3900px){
-
-    .grid{
-      width:50%;
-    }
-  }

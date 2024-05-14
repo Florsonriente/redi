@@ -17,7 +17,7 @@
 
 
 :root {
-  --innerwidth: 1300px;
+ 
   --white:white;
   --font-weight: 400;
   --font-size: 1.5em;
@@ -64,6 +64,7 @@ body{
   align-items: center;
   margin: 0;
   position: relative;
+ 
   
   
 }
@@ -75,8 +76,7 @@ body{
  
   width: 100%;
   z-index: -1;
-  width: 100%;
-  top:0;
+ 
   transition: all 0.5s ease-in;
   padding: 3em;
  }
@@ -279,29 +279,45 @@ p{
 
 /*BUTTONS*/
 
-#button_share, #button, #button_carbon_facts {
-
+#button_share/*score results share*/, #button/*score calculate*/, 
+#button_carbon_facts, .get_saved_carbon, #city-form > button, .to_do_list_button {
   display: block;
   margin: auto;
   padding: 3em;
-  background-color: transparent;
-  width: 250px;
+  width: 200px;
   cursor: pointer;
+  color: #FFFFFF !important;
+  /*box-shadow: 4px 4px 4px #0000003b;*/
+  border-radius: 13px;
+  background: #39513E;
+  padding: 1.5em;
 }
 
 #city-form > button{
   cursor: pointer;
+  display: inline;
+  width: 300px;
+  padding:1em;
 }
-.get_saved_carbon{
-display: block;
-margin: auto;
-padding: 3em;
-background-color: transparent;
-width: 250px;
-cursor: pointer;}
+
+.to_do_list_button{
+  font-size: var(--font-size);
+  display: block;
+  padding:1em;
+  width: 150px;
+  cursor: pointer;
+}
 
 #button{
   margin:0;
+}
+
+
+#button_share:hover/*score results share*/, #button:hover/*score calculate*/, 
+#button_carbon_facts:hover, .get_saved_carbon:hover, #city-form > button:hover, .to_do_list_button:hover {
+  color: #000000 !important;
+  background: #E1DED2;
+
 }
 /*HERO PAGE STYLING*/
 
@@ -443,6 +459,7 @@ margin-bottom: -2em;}
   max-width:(var(--innerwidth));
   margin: auto;
   margin-bottom: 1em;
+
 	/*font-variation-settings: 'wght' 300, 'wdth' 85;*/
 
    }
@@ -511,14 +528,11 @@ margin: auto;
 
 #button_carbon_facts {
 
-display: block;
-margin: auto;
-padding: 3em;
-background-color: transparent;
+
 position: absolute;
   bottom: 10%;
   left: 75%;
-  width: 250px;
+
 }
 
 
@@ -537,7 +551,7 @@ position: relative;
 .carbontext h2{
 width:70%;
 text-align: left;
-font-size: 2em;
+font-size: var(--font-size);
 }
 
 body > div.carbonfactspage > h2:nth-child(3){
@@ -552,7 +566,7 @@ body > div.carbonfactspage > h2:nth-child(3){
     background-image: url(../nature/frame.jpg);
     background-size: cover;
     background-position: center;
-    width: 200px;
+    width: 400px;
     padding: 2em 0.5em;
   }
 
@@ -742,14 +756,18 @@ body > div.planetpage > div > div > span:nth-child(4){
 }
 
 .planetpage{
-  min-height: 800px;
+ /* min-height: 800px;*/
+ height:100vh;
 }
 
 /*TO DO LIST*/
 
 .to_do_list_page{
- /* height:100vh;*/
-  width:var(--innerwidth);
+    margin-top:10vh;
+    width: var(--innerwidth);
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 50vh;
 
 }
 
@@ -777,9 +795,7 @@ body > div.planetpage > div > div > span:nth-child(4){
 
 }
 
-.to_do_list_button{
 
-}
 
 #list_container p, #input_box{
   user-select: none;
@@ -791,7 +807,18 @@ font-weight: var(--font-weight);
 display: flex;
 flex-direction: row;
 align-items: center;
+
 }
+
+#input_box{
+  flex:1;
+  border:1px solid black;
+ 
+}
+#city-input{
+  padding:1em;
+}
+
 
 /**/#list_container p::before{
   content:'';
@@ -822,8 +849,9 @@ align-items: center;
 
 p.checked{
  
-  height: 200px;
-    width: 600px;
+  min-height: 200px;
+  width: 400px;
+  margin: 2em;
     margin: 2em;
     background-size: cover;
     background-position: center ;
@@ -836,13 +864,5 @@ p.checked #text{
 }
 
 
-.to_do_list_button{
-  font-size: var(--font-size);
-  display: block;
-  padding:1em;
-  background-color: transparent;
-  width: 150px;
-  cursor: pointer;
-}
 
 

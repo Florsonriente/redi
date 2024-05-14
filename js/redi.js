@@ -1,7 +1,7 @@
-7/////ON SCROLL
+/////ON SCROLL
 
-$(document).on('scroll', function(){
-    // Adjust speed for .block2
+/**/$(document).on('scroll', function(){
+   
     $('.block2, .hero').css({
         "left": Math.max(-(1.3*window.scrollY)) + "px",
         "transition": "left 1.2s ease"
@@ -31,7 +31,7 @@ $(document).on('scroll', function(){
         "transition": " 1.2s ease",
       "transition-delay": "0.5s ease"
       
-    });/**/
+    });
  
 });
 

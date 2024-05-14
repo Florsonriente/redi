@@ -1,6 +1,6 @@
 @media only screen and (max-width: 1450px) {
     :root {
-        --innerwidth: 1000px;
+        
         --white:white;
         --font-weight: 400;
         --font-size: 1.5em;
@@ -10,9 +10,7 @@
         --scores-font-weight: 200;
       }
 
-      .carbontext h2{
-        font:1.5em;
-      }
+   
       #button_carbon_facts {
         left: 70%;
       }
@@ -26,4 +24,86 @@
   }
 
 
+  @media only screen and (max-width: 1000px) {
+    :root {
+      
+        --white:white;
+        --font-weight: 400;
+        --font-size: 1em;
+        --h1font-size: 3em;
+        --h1font-weight: 100;
+        --scores-font-size: 10em;
+        --scores-font-weight: 200;
+      }
 
+.impactpage{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+ 
+  .activities_all{
+    grid-template-columns: 1fr
+  }
+
+
+  .carbontext {
+    margin: auto;
+width: 500px;
+}
+
+.grid {
+    display: grid;
+    grid-template-rows: repeat(11 , 20px);
+    grid-template-columns: repeat(19, 20px);
+}
+
+#button_carbon_facts {
+    left: 50%;
+  }
+
+  .calculationform{
+    grid-template-columns: 1fr;
+    align-items: center;
+    gap: 5em;
+    justify-items: center;
+    justify-content: center;
+    
+  }
+
+  .left{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  body > div.calculationpage > div > div.left > section:nth-child(7) /*a score calculator form, plaecemnt of input fields*/{
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #city-form{
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  }
+
+  @media only screen and (max-width: 600px) {
+    body{
+        width: 500px;
+        display: block;
+        margin: auto;
+    }
+
+    .planetpage{
+       
+    }
+  }
