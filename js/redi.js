@@ -189,6 +189,7 @@ for (let i = 0; i < activities.length; i++) {
 // Hide all carbon facts by default
 for (let j = 0; j < facts.length; j++) {
     facts[j].style.display = "none";
+    console.log("1")
 }
 
 let seeImpact = function() {
@@ -198,7 +199,8 @@ let seeImpact = function() {
     // Loop through Activities checkboxes & display or hide crabon facts
     for (let i = 0; i < activities.length; i++) {
         if (!activities[i].checked) {
-            facts[i].style.display = "block";         
+            facts[i].style.display = "block";   
+            console.log("2")      
         } else {
             facts[i].style.display = "none";
         }
@@ -209,7 +211,9 @@ let seeImpact = function() {
 seeImpact();
 
 document.querySelectorAll('.activities').forEach(function(activities) {
+    console.log("3")   
 activities.addEventListener('input', seeImpact);
+console.log("4")   
 });
 
 ///// OPEN AND CLOSE EXPLANATION BOXES TO EACH CARBON FACT7
@@ -222,10 +226,12 @@ let closeButtons = document.querySelectorAll('.close_explanations');
 function showExplanation(event) {
     let index = Array.from(buttonReadExplanations).indexOf(event.target);
     explanations[index].style.display = "flex";
+    console.log("5")   
 }
 
 for (let i = 0; i < buttonReadExplanations.length; i++) {
     buttonReadExplanations[i].addEventListener('click', showExplanation);
+    console.log("6")   
 }
 
 closeButtons.forEach(function(closeButton){
@@ -233,6 +239,7 @@ closeButton.addEventListener('click',function(){
     let index = Array.from(closeButtons).indexOf(closeButton);
     explanations[index].style.display="none";
 });
+console.log("7")   
 
 });
 
@@ -322,12 +329,19 @@ function addTask(){
         p.style=deco.style;
         p.size = deco.size;
         p.color = deco.color;
-      
-
-    }
+        p.setAttribute("draggable", true);
+        p.addEventListener("dragover", dragOver);
+p.addEventListener("drop", drop);
+          }
     inputBox.value='';
     saveData();
+    
+
 }
+
+
+//////////////////////////DRAG AND DROP TO SO LIST
+
 
 /*listContainer.addEventListener("click", function(e){
 
@@ -393,6 +407,15 @@ function toDoListBackgroundsSelector(){
     const index = Math.floor(Math.random() * toDoListBackgrounds.length);
     return toDoListBackgrounds[index];
   }
+  const toDoListPage = document.querySelector(".to_do_list_page");
+  console.log(toDoListPage);
+  function dragOver(e) {
+    e.preventDefault();
+}
+function drop(e) {
+    e.preventDefault();
+}
+
 
 
 

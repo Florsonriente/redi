@@ -1,3 +1,12 @@
+@media only screen and (max-width: 1550px){
+
+.grid {
+    display: grid;
+    grid-template-rows: repeat(11 /*11*/, 70px);
+    grid-template-columns: repeat(/*19*/19, 70px);  
+
+}
+}
 @media only screen and (max-width: 1450px) {
     :root {
         
@@ -13,18 +22,19 @@
    
       #button_carbon_facts {
         left: 70%;
-      }
+      }}
+      @media only screen and (max-width: 1300px) {
+ 
 
-      .grid {
-          display: grid;
-          grid-template-rows: repeat(11 /*11*/, 50px);
-          grid-template-columns: repeat(/*19*/19, 50px);  
-      
-      }
-  }
+  .grid {
+    display: grid;
+    grid-template-rows: repeat(11 /*11*/, 50px);
+    grid-template-columns: repeat(/*19*/19, 70px);  
+
+} }
 
 
-  @media only screen and (max-width: 1000px) {
+  @media only screen and (max-width: 1050px) {
     :root {
       
         --white:white;
@@ -34,6 +44,7 @@
         --h1font-weight: 100;
         --scores-font-size: 10em;
         --scores-font-weight: 200;
+        --width:100%;
       }
 
 .impactpage{
@@ -55,7 +66,7 @@ width: 500px;
 
 .grid {
     display: grid;
-    grid-template-rows: repeat(11 , 20px);
+    grid-template-rows: repeat(11 , 40px);
     grid-template-columns: repeat(19, 20px);
 }
 
@@ -97,13 +108,33 @@ width: 500px;
   }
 
   @media only screen and (max-width: 600px) {
-    body{
-        width: 500px;
-        display: block;
-        margin: auto;
+
+    :root{
+        --width: 300px;
     }
 
-    .planetpage{
-       
+
+    .planet{
+        margin-bottom: 50vh;
     }
+    .carbontext {
+   
+    width: 300px;
+    overflow-y: scroll;
+    padding: 1em;
+    width:100%;
+    }
+  }
+
+  @media only screen and (max-width: 400px) {
+
+  
+
+    .grid {
+        display: grid;
+        grid-template-rows: repeat(11 , 20px);
+        grid-template-columns: repeat(19, 10px);
+    }
+    
+  
   }
