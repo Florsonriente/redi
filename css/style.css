@@ -519,10 +519,10 @@ margin-bottom: -2em;}
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-size: contain;
+  background-size: cover;
   background-position: left;
-  background-image: url(../nature/0b0f58277596a1f7d72361757010ca38.jpg);
-  border-radius: 140px;
+  background-image: url(../nature/d8761b2a59507d6931e31734274da928.jpg);
+  
   background-repeat: no-repeat;
  
 
@@ -588,7 +588,7 @@ text-align: center;
 /*IMPACT PAGE*/
 .carbonfacts{
 /*border: 1px solid black;*/
-    background-image: url(../nature/frame.jpg);
+    background-image: url(../nature/57f035718d21cd0a4256f78a1751d0f3.jpg);
     background-size: cover;
     background-position: center;
     width: 400px;
@@ -626,7 +626,7 @@ text-align: center;
  
   .impact{
   display: flex;
-  gap: 4em;
+  gap: 0.3em;
   flex-direction: row;
   flex-wrap: wrap;
   align-content: flex-start;
@@ -691,7 +691,7 @@ text-align: center;
     font-weight: var(--scores-font-weight);
    
     min-height: 500px;
-    background-size: contain;
+    background-size: auto;
     background-repeat: no-repeat;
     display: flex;
     align-content: center;
@@ -700,7 +700,7 @@ text-align: center;
     background-position: bottom;
     margin-top:0.5em;
 
-    background-image: url(../nature/0b0f58277596a1f7d72361757010ca38.jpg);
+    background-image: url(../nature/d8761b2a59507d6931e31734274da928.jpg);
     border-radius: 140px;
     background-repeat: no-repeat;
   }
