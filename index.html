@@ -73,7 +73,7 @@
 </div>
 
 
-<div class="impactpage">
+<div class="page" class="impactpage">
 
 
 
@@ -168,7 +168,7 @@
 
 </div>
 
-<div class="carbonfactspage">
+<div class="page" class="carbonfactspage">
   <h2>  As u can see the max. roughly amount of CO2 u can potentially "gather" by refusing from little things is arouns 12 kg. Click on the button below to see the random activities that might potentially need roughly the same amount of CO2. </h2>
  <!-- <h1 class="typoeffect"> <span>T</span><span>h</span><span>e</span> <span>l</span><span>e</span><span>s</span><span>s</span> <span>w</span><span>e</span> <span>c</span><span>o</span><span>n</span><span>s</span><span>u</span><span>m</span><span>e</span> <span>t</span><span>h</span><span>e</span> <span>b</span><span>e</span><span>t</span><span>t</span><span>t</span><span>e</span><span>r</span></h1>-->
   
@@ -190,7 +190,7 @@
   <h2>  The scale and the importance of the alternatives is breathtaking, <br> do u agree?  </h2>
 </div>
 
-<div class="naturegridpage">
+<div class="page" class="naturegridpage">
 
   <div class="grid">
 
@@ -215,7 +215,7 @@
 
 </div><!--end naturegridnpage-->
 
-<div class="calculationpage">
+<div class="page" class="calculationpage">
   <h1 class="typoeffect"> <span>D</span><span>o</span> 
     <span>u </span> <span>f</span><span>e</span><span>e</span><span>l</span>
     <span>l</span><span>i</span><span>k</span><span>e </span>
@@ -229,7 +229,8 @@
   <h3>Type in your data:</h3>
   <br>
     <section>
-  <label for = "transportationMode" value = "transportationMode">Your transportation mode: </label> <br>
+      <legend>Your transportation mode:</legend>
+ <!-- <label for = "transportationMode" value = "transportationMode">Your transportation mode: </label> <br>-->
   <input type="radio" name="answertransport" id="car" value="car" required>
   <span> car </span>
   <input type="radio" name="answertransport" id="publicTransport" value="public transport" required>
@@ -240,7 +241,8 @@
     </section>
   <br>
     <section>
-    <label for = "dietaryChoice" value = "dietaryChoice">Your dietary choice: </label><br>
+      <legend>Your dietary choice:</legend>
+  <!-- <label for = "dietaryChoice" value = "dietaryChoice">Your dietary choice: </label><br>--> 
     <input type="radio" name="answerdiet" id="dietaryChoice1" value="snacks&cola" required>
     <span> snacks & cola </span>
     <input type="radio" name="answerdiet" id="dietaryChoice2" value="vegan" required>
@@ -280,7 +282,7 @@
   
     </div> <!--end calculationpage-->
 
-    <div class="planetpage">
+<div class="planetpage">
       <h1 class="typoeffect"> <span>E</span><span>v</span><span>e</span><span>r</span><span>y</span> <span>s</span><span>i</span><span>n</span><span>g</span><span>l</span><span>e</span>
         <span>e</span><span>f</span><span>f</span><span>o</span><span>r</span><span>t</span> <span>c</span><span>o</span><span>u</span><span>n</span><span>t</span><span>s</span></h1>
       <div class="planet">
@@ -304,7 +306,7 @@
       </div>
 
 
- <div class="airqualitypage">
+ <div class="page" class="airqualitypage">
   <img id="image_wrapper" src="./clouds/clouds4.gif">
   <h1 class="typoeffect"> <span>O</span><span>u</span><span>r</span> <span>P</span><span>l</span><span>a</span><span>n</span><span>e</span><span>t</span> <span>n</span><span>o</span><span>w</span></h1>
   <div id="city-form-container">
@@ -352,6 +354,11 @@
  
 </div>
 
+
+
+
+
+
 </div>
 
 
@@ -359,206 +366,8 @@
 
     </body>
     <!----><script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="./js/redi.js"></script>
-    
-<script>
-/*LEFT SCROLLING BEAUTIFICATION
-
-
-
-    $(document).on('scroll', function(){
-    // Adjust speed for .block2
-    $('.block2, .hero').css({
-        "left": Math.max(-(1.3*window.scrollY)) + "px",
-        "transition": "left 1.2s ease"
-    });
-
-    $(".hero img").css({
-      "opacity": "0%",
-      "transition": "opacity 1.2s ease"
-    });
-
-   $(".hero p").css({
-      "left": "10%",
-      "transition": "left 1.2s ease",
-      "opacity": "100%",
-    });
-
-
-    $(".subblockpics:nth-child(2").css({
-      "opacity": "100%",
-       "transition": " 1.2s ease",
-      "transition-delay": "0.5s ease",
-      "margin-left":"-30vw",
-    });
-    $(".subblockpics:nth-child(3").css({
-      "opacity": "100%",
-      "margin-left":"-20vw",
-        "transition": " 1.2s ease",
-      "transition-delay": "0.5s ease"
-      
-    });
- 
-});*/
-
-
-/*MINIMALIST CALCULATION SCORE*/
-
-let button = document.getElementById("button");
-
-/*dietary choice  score value calculation*/
-
-let dietaryChoiceSummary = function () {
-    let selectedDiet = document.querySelector('input[name="answerdiet"]:checked');
-    let scoreDiet = 0;
-if (selectedDiet){
-  switch (selectedDiet.value) {
-            case 'snacks&cola': 
-                scoreDiet = 0;
-                break;
-            case 'smartomnivore':
-                scoreDiet = 50;
-                break;
-            case 'vegan':
-                scoreDiet = 100;
-                break;
-            default:
-                scoreDiet = 0;
-                break;
-        }
-}
-
-  return scoreDiet;
-}
-
-/*transportation score value calculation*/
-
-let transportationModeSummary = function () {
-    let selectedTransport = document.querySelector('input[name="answertransport"]:checked');
-    let scoreTransport = 0;
-if (selectedTransport){
-  switch (selectedTransport.value) {
-            case 'car': 
-                scoreTransport = 0;
-                break;
-            case 'public transport':
-                scoreTransport = 50;
-                break;
-            case 'bicycle':
-                scoreTransport = 100;
-                break;
-            default:
-                scoreTransport = 0;
-                break;
-        }
-}
-
-  return scoreTransport;
-}
-
-
-//const dietaryChoice = document.querySelector("dietaryChoice value");
-
-/*energy consumption score calculation*/
-let energyConsumers = document.getElementById("energyConsumers");
-let energyConsumptionValue = document.getElementById("energyConsumptionValue")
-
-let energyConsumptionSummary = function(energyConsumers, energyConsumptionValue){
-    let scoreEnergy = 0;
-  /*  if (energyConsumers <1) {
-      alert "Please enter the valid number of people living with u"
-    }*/
-
-
-    if (energyConsumers === 1) {
-        if (energyConsumptionValue <500) {scoreEnergy = 100;}
-    else if (energyConsumptionValue >= 500 && energyConsumptionValue <= 1000) {scoreEnergy = 50;}
-    else if (energyConsumptionValue >=1001) {scoreEnergy = 0;}
-     }
-
-     if (energyConsumers === 2) {
-        if (energyConsumptionValue <1000) {scoreEnergy = 100;}
-    else if (energyConsumptionValue >= 1000 && energyConsumptionValue <= 1500) {scoreEnergy = 50;}
-    else if (energyConsumptionValue >=1501) {scoreEnergy = 0;}
-     }
-    
-
-if (energyConsumers >= 3) {
-    if (energyConsumptionValue <1500) {scoreEnergy = 100;}
-else if (energyConsumptionValue >= 1500 && energyConsumptionValue <= 3000) {scoreEnergy = 50;}
-else if (energyConsumptionValue >=3001) {scoreEnergy = 0;}
- }
-
-  return scoreEnergy;
-  };
-
-
-  
-
-button.addEventListener("click", () => {
-  // ENERGY SCORE 
-  let scoreEnergy = energyConsumptionSummary(parseInt(energyConsumers.value), parseInt(energyConsumptionValue.value));
- 
-    console.log(scoreEnergy);
-    //document.getElementById("scoreValue").innerHTML=scoreEnergy;
-
-    //TRANSPORTATION SCORE
-    let scoreTransport = transportationModeSummary();
-     //document.getElementById("scoreValue").innerHTML=scoreTransport;
-    // console.log(scoreTransport);
-
-    
-    //DIET SCORE
-    let scoreDiet = dietaryChoiceSummary();
-     //document.getElementById("scoreValue").innerHTML=scoreDiet;
-     //console.log(scoreDiet);
-
-
-     //FINAL AVERAGE SCORE FROM ALL INPUTS.
-
-     let averageScore = Math.floor(Math.round((scoreEnergy + scoreTransport + scoreDiet)/3));
-     document.getElementById("scoreValue").innerHTML=averageScore;
-
-    console.log('scoreEnergy !', scoreEnergy);
-    console.log(scoreTransport);
-    console.log(scoreDiet);
-    console.log(averageScore);
-         
-});
-
-
-
-// PLANET OPACITY VALUE BASED ON UNSER INPUT 
-
-let slider = document.getElementById("inputplanet");
-slider.min = 0;
-slider.max = 100;
-
-let updatePlanetOpacity = function() {
-    let planetPicBlack = document.getElementById("planetpicblack");
-    let planetPicGreen = document.getElementById("planetpicgreen");
-    
-    // Calculate opacity values based on the slider value
-    let opacityValue = slider.value / 100;
-    
-    // Adjust opacity of image1 (planetPicBlack)
-    planetPicBlack.style.opacity = 1 - opacityValue;
-    
-    // Adjust opacity of image2 (planetPicGreen)
-    planetPicGreen.style.opacity = opacityValue;
-};
-
-updatePlanetOpacity();
-slider.addEventListener("input", updatePlanetOpacity);
-
-
-
-
-
-
-
-
-</script>
+    <script src="./js/redi.js">
+    </script>
 
 
 

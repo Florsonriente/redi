@@ -35,8 +35,144 @@
  
 });
 
+/*MINIMALIST CALCULATION SCORE*/
+
+let button = document.getElementById("button");
+
+/*transportation score value calculation*/
+
+let transportationModeSummary = function () {
+    let selectedTransport = document.querySelector('input[name="answertransport"]:checked');
+    let scoreTransport = 0;
+if (selectedTransport){
+  switch (selectedTransport.value) {
+            case 'car': 
+                scoreTransport = 0;
+                break;
+            case 'public transport':
+                scoreTransport = 50;
+                break;
+            case 'bicycle':
+                scoreTransport = 100;
+                break;
+            default:
+                scoreTransport = 0;
+                break;
+        }
+}
+
+  return scoreTransport;
+}
+
+/*dietary choice  score value calculation*/
+
+let dietaryChoiceSummary = function () {
+    let selectedDiet = document.querySelector('input[name="answerdiet"]:checked');
+    let scoreDiet = 0;
+if (selectedDiet){
+  switch (selectedDiet.value) {
+            case 'snacks&cola': 
+                scoreDiet = 0;
+                break;
+            case 'smartomnivore':
+                scoreDiet = 50;
+                break;
+            case 'vegan':
+                scoreDiet = 100;
+                break;
+            default:
+                scoreDiet = 0;
+                break;
+        }
+}
+
+  return scoreDiet;
+}
+
+/*energy consumption score calculation*/
+let energyConsumers = document.getElementById("energyConsumers");
+let energyConsumptionValue = document.getElementById("energyConsumptionValue")
+
+let energyConsumptionSummary = function(energyConsumers, energyConsumptionValue){
+    let scoreEnergy = 0;
+    if (energyConsumers <1) {
+      alert ("Please enter the valid number of people living with u");
+    }
+    else if (energyConsumers === 1) {
+        if (energyConsumptionValue <500) {scoreEnergy = 100;}
+    else if (energyConsumptionValue >= 500 && energyConsumptionValue <= 1000) {scoreEnergy = 50;}
+    else if (energyConsumptionValue >=1001) {scoreEnergy = 0;}
+     }
+
+     if (energyConsumers === 2) {
+        if (energyConsumptionValue <1000) {scoreEnergy = 100;}
+    else if (energyConsumptionValue >= 1000 && energyConsumptionValue <= 1500) {scoreEnergy = 50;}
+    else if (energyConsumptionValue >=1501) {scoreEnergy = 0;}
+     }
+    
+
+if (energyConsumers >= 3) {
+    if (energyConsumptionValue <1500) {scoreEnergy = 100;}
+else if (energyConsumptionValue >= 1500 && energyConsumptionValue <= 3000) {scoreEnergy = 50;}
+else if (energyConsumptionValue >=3001) {scoreEnergy = 0;}
+ }
+
+  return scoreEnergy;
+  };
+
+button.addEventListener("click", () => {
+  // ENERGY SCORE 
+  let scoreEnergy = energyConsumptionSummary(parseInt(energyConsumers.value), parseInt(energyConsumptionValue.value));
+  console.log('scoreEnergy !',scoreEnergy);
+
+    //TRANSPORTATION SCORE
+    let scoreTransport = transportationModeSummary();
+    console.log('scoreTransport !',scoreTransport);
+    
+    //DIET SCORE
+    let scoreDiet = dietaryChoiceSummary();
+    console.log('scoreDiet !',scoreDiet);
+
+
+     //FINAL AVERAGE SCORE FROM ALL INPUTS.
+     let averageScore = Math.floor(Math.round((scoreEnergy + scoreTransport + scoreDiet)/3));
+     document.getElementById("scoreValue").innerHTML=averageScore;
+
+
+    console.log('averageScore !',averageScore);
+         
+});
+
+
+// PLANET OPACITY VALUE BASED ON UNSER INPUT 
+
+let slider = document.getElementById("inputplanet");
+slider.min = 0;
+slider.max = 100;
+
+let updatePlanetOpacity = function() {
+    let planetPicBlack = document.getElementById("planetpicblack");
+    let planetPicGreen = document.getElementById("planetpicgreen");
+    
+    // Calculate opacity values based on the slider value
+    let opacityValue = slider.value / 100;
+    
+    // Adjust opacity of image1 (planetPicBlack)
+    planetPicBlack.style.opacity = 1 - opacityValue;
+    
+    // Adjust opacity of image2 (planetPicGreen)
+    planetPicGreen.style.opacity = opacityValue;
+};
+
+updatePlanetOpacity();
+slider.addEventListener("input", updatePlanetOpacity);
+
+
+
 
 // SEE ACTIVITIES IMPACT FUNCTION
+
+//////////////////CHECK-UNCHECK ACTIVITIES & DISPLAY/HIDE CARBON FACTS
 
 console.log("privetik")
 
@@ -45,12 +181,12 @@ let activities = document.getElementsByClassName("activities");
 let facts = document.getElementsByClassName("carbonfacts");
 
 
-// Set activityLights and activityHards as checked by default
+// Set all activities as checked by default
 for (let i = 0; i < activities.length; i++) {
     activities[i].checked = true;
 }
 
-// Hide all facts by default
+// Hide all carbon facts by default
 for (let j = 0; j < facts.length; j++) {
     facts[j].style.display = "none";
 }
@@ -59,13 +195,10 @@ let seeImpact = function() {
     let activities = document.getElementsByClassName("activities");
     let facts = document.getElementsByClassName("carbonfacts");
   
-
-
-    // Loop through lightActivities checkboxes
+    // Loop through Activities checkboxes & display or hide crabon facts
     for (let i = 0; i < activities.length; i++) {
         if (!activities[i].checked) {
-            facts[i].style.display = "block";
-            
+            facts[i].style.display = "block";         
         } else {
             facts[i].style.display = "none";
         }
@@ -73,13 +206,14 @@ let seeImpact = function() {
 
 };
 
-
 seeImpact();
 
-
 document.querySelectorAll('.activities').forEach(function(activities) {
-    activities.addEventListener('input', seeImpact);
+activities.addEventListener('input', seeImpact);
 });
+
+///// OPEN AND CLOSE EXPLANATION BOXES TO EACH CARBON FACT7
+/**/
 
 let buttonReadExplanations = document.querySelectorAll('.button_read_explanation');
 let explanations = document.querySelectorAll('.explanations');
@@ -101,7 +235,6 @@ closeButton.addEventListener('click',function(){
 });
 
 });
-
 
 
 
@@ -238,16 +371,7 @@ function showTask(){
 ];
 */
 const toDoListBackgrounds = [
-    {
-      style: "background: repeating-conic-gradient(from 45deg, #a8a398 0% 25%, #39513e 0% 50%)",
-      size: "background-size: 11px 11px",
-      color: "background-color: #a8a398"
-    },/*
-    {
-      style: "background: repeating-linear-gradient(45deg, transparent, transparent 26px, #849c0b 26px, #849c0b 52px)",
-      size: "background-size: 26px 26px",
-      color: "background-color: #556645"
-    },*/
+
     {
       style: "background: radial-gradient(circle, transparent 20%, #556645 20%, #556645 80%, transparent 80%, transparent) 0% 0% / 52px 52px, radial-gradient(circle, transparent 20%, #556645 20%, #556645 80%, transparent 80%, transparent) 26px 26px / 52px 52px, linear-gradient(#849c0b 2px, transparent 2px) 0px -1px / 26px 26px, linear-gradient(90deg, #849c0b 2px, #556645 2px) -1px 0px / 26px 26px #556645",
       size: "background-size: 52px 52px, 52px 52px, 26px 26px, 26px 26px",
