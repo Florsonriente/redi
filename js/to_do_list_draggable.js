@@ -409,113 +409,84 @@ else {clouds.style.filter = "invert(1) brightness(0)";}
 
 }
 
-////// TO DO LIST
-
 const inputBox = document.getElementById("input_box");
 const listContainer = document.getElementById("list_container");
-function addTask(){
-    if (inputBox.value === ''){
-        alert ("Lets think out some task for u");
-    }
-    else {
+
+function addTask() {
+    if (inputBox.value === '') {
+        alert("Let's think out some tasks for you");
+    } else {
         let p = document.createElement("p");
-        p.innerHTML= inputBox.value;
+        p.innerHTML = inputBox.value;
         listContainer.appendChild(p);
 
         let closeToDoListTask = document.createElement("span");
         closeToDoListTask.innerHTML = "\u00d7";
+        closeToDoListTask.className = "close";
         closeToDoListTask.id = "closeToDoListTask";
-        p.appendChild(closeToDoListTask)
+        p.appendChild(closeToDoListTask);
 
-        p.classList.add("checked");
+        p.classList.add("task-item");
         const deco = toDoListBackgroundsSelector();
-        p.style=deco.style;
+        p.style = deco.style;
         p.size = deco.size;
         p.color = deco.color;
         p.setAttribute("draggable", true);
 
-p.addEventListener("dragstart", function(e) {
-    let selected = e.target;})
-    
-let toDoListContainer = document.getElementsByClassName("to_do_list_page");
-        toDoListContainer.addEventListener("dragover", function(e) {
-            e.preventDefault();     }) 
+        p.addEventListener("dragstart", function (e) {
+            e.dataTransfer.setData("text", e.target.id);
+        });
 
-toDoListContainer.addEventListener("drop", function(e) {
-            toDoListContainer.appendChild(selected);
-            selected = null;
-        
-        });}
-    inputBox.value='';
+        listContainer.addEventListener("dragover", function (e) {
+            e.preventDefault();
+        });
+
+        listContainer.addEventListener("drop", function (e) {
+            e.preventDefault();
+            let id = e.dataTransfer.getData("text");
+            let draggedElement = document.getElementById(id);
+            listContainer.appendChild(draggedElement);
+        });
+
+        p.id = "task-" + (document.querySelectorAll('.task-item').length + 1);
+    }
+    inputBox.value = '';
     saveData();
-
 }
-    
 
-
-
-
-
-
-
-/*listContainer.addEventListener("click", function(e){
-
-    if(e.target.tagName === "LI"){
-        e.target.classList.toggle("checked");
-        saveData();
-    }
-    else if (e.target.tagName === "CLOSETODOLISTTASK"){
-        e.target.parentElement.remove();
-        saveData();
-        }
-   
-}, false )*/
-
-
-listContainer.addEventListener("click", function(e){
-
-    if(e.target.tagName === "SPAN"){
+listContainer.addEventListener("click", function (e) {
+    if (e.target.className === "close" || e.target.id === "closeToDoListTask") {
         e.target.parentElement.remove();
         saveData();
     }
-    
-}, false )
+}, false);
 
-
-function saveData(){
+function saveData() {
     localStorage.setItem("data", listContainer.innerHTML);
 }
 
-function showTask(){
+function showTask() {
     listContainer.innerHTML = localStorage.getItem("data");
 }
 
+window.onload = showTask;
 
-/////TO DO LIST DIFFERENT BACKGROUNDS
-
-/*let toDoListBackgrounds = [
-    'url("./nature/ammonra_a_professional_white_zen_minimalist_aesthetic_desktop_w_f26dfeb7-278d-43a8-a87a-7dbba0c08202.png")',
-    'url("./nature/dark_voyager_Create_a_highly_aesthetic_and_Instagram-worthy_ima_babcfd24-e26c-4b01-960c-19c414ffaac7.png")',
-    'url("./nature/neuromur_Abstract_white_studio_background_for_product_presentat_4010bc83-3753-4f97-94fb-de8fbb231fb4.png")'
-];
-*/
 const toDoListBackgrounds = [
-
     {
-      style: "background: radial-gradient(circle, transparent 20%, #556645 20%, #556645 80%, transparent 80%, transparent) 0% 0% / 52px 52px, radial-gradient(circle, transparent 20%, #556645 20%, #556645 80%, transparent 80%, transparent) 26px 26px / 52px 52px, linear-gradient(#849c0b 2px, transparent 2px) 0px -1px / 26px 26px, linear-gradient(90deg, #849c0b 2px, #556645 2px) -1px 0px / 26px 26px #556645",
-      size: "background-size: 52px 52px, 52px 52px, 26px 26px, 26px 26px",
-      color: "background-color: #556645"
+        style: "background: radial-gradient(circle, transparent 20%, #556645 20%, #556645 80%, transparent 80%, transparent) 0% 0% / 52px 52px, radial-gradient(circle, transparent 20%, #556645 20%, #556645 80%, transparent 80%, transparent) 26px 26px / 52px 52px, linear-gradient(#849c0b 2px, transparent 2px) 0px -1px / 26px 26px, linear-gradient(90deg, #849c0b 2px, #556645 2px) -1px 0px / 26px 26px #556645",
+        size: "background-size: 52px 52px, 52px 52px, 26px 26px, 26px 26px",
+        color: "background-color: #556645"
     },
     {
         style: "background: radial-gradient(circle, transparent 20%, #a8a398 20%, #a8a398 80%, transparent 80%, transparent) 0% 0% / 52px 52px, radial-gradient(circle, transparent 20%, #a8a398 20%, #a8a398 80%, transparent 80%, transparent) 26px 26px / 52px 52px, linear-gradient(#849c0b 2px, transparent 2px) 0px -1px / 26px 26px, linear-gradient(90deg, #39513e 2px, #a8a398 2px) -1px 0px / 26px 26px #a8a398",
         size: "background-size: 52px 52px, 52px 52px, 26px 26px, 26px 26px",
         color: "background-color: #a8a398"
-      }/**/
-  ];
+    }
+];
 
-function toDoListBackgroundsSelector(){
+function toDoListBackgroundsSelector() {
     const index = Math.floor(Math.random() * toDoListBackgrounds.length);
     return toDoListBackgrounds[index];
-  }
+}
 
-  
+

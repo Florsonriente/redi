@@ -674,7 +674,7 @@ text-align: center;
    
   }
 
-  .close_explanations, closeToDoListTask{
+  .close_explanations, #closeToDoListTask{
     font-size: var(--font-size);
     position: absolute;
     right: 2%;
