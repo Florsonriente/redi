@@ -111,20 +111,45 @@ width: 500px;
 
     :root{
         --width: 300px;
+        --h1font-size: 2em;
     }
 
+    .carbonfacts {
+      width: 80%;
+    }
+
+    #button_carbon_facts {
+      left: 30%;
+  }
+    #input_box {
+      width: 200px;
+    }
 
     .planet{
         margin-bottom: 50vh;
     }
     .carbontext {
-   
-    width: 300px;
     overflow-y: scroll;
     padding: 1em;
     width:100%;
     }
+    .carbontext h2 {
+      width: 100%;}
+
+    #image_wrapper{
+      width:100%;
+    }
+    #city-input{
+      width:70vw;
+    }
+    #city-form > button {
+
+      width: 70vw;
   }
+  p.checked {
+    
+    width: auto;
+  }}
 
   @media only screen and (max-width: 400px) {
 

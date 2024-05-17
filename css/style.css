@@ -16,6 +16,27 @@
 }
 
 
+body{
+
+    overflow-x: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+  
+
+  }
+
+ 
+
+  html{
+    border:4px solid red;
+  }
+
+  body{
+    border:4px solid green;
+  }
 :root {
  
   --white:white;
@@ -44,19 +65,7 @@ header{
   /*display: none;*/
 }
 
-body{
-/* background: black;
- position: relative;
-    height: 6500px;
-  */
-  overflow-x: auto;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
-  border:4px solid red;
-}
+
 
 .project_start{
   height:100vh;
@@ -108,7 +117,7 @@ body{
   justify-content: center;
     background-size: cover;
     margin-top: 1em;
-    margin:auto;
+    margin:1em auto;
 }
 
 .needle {
@@ -478,8 +487,6 @@ margin-bottom: -2em;}
   line-height: 1.3;
   z-index:2;
   display: block;
- 
- 
   margin-bottom: 1em;
 
 	/*font-variation-settings: 'wght' 300, 'wdth' 85;*/
@@ -514,7 +521,9 @@ margin-bottom: -2em;}
 }
 
 
-
+.right{
+  width:100%;
+}
 #finalscore{
   display: flex;
   flex-direction: column;
@@ -544,7 +553,7 @@ margin: auto;
 /*RANDOM CARBON FACTS*/
 
 .carbonfactspage{
-  width: var(--innerwidth);
+width:100%;
 }
 
 

@@ -432,44 +432,12 @@ function addTask(){
         p.style=deco.style;
         p.size = deco.size;
         p.color = deco.color;
-        p.setAttribute("draggable", true);
 
-p.addEventListener("dragstart", function(e) {
-    let selected = e.target;})
-    
-let toDoListContainer = document.getElementsByClassName("to_do_list_page");
-        toDoListContainer.addEventListener("dragover", function(e) {
-            e.preventDefault();     }) 
-
-toDoListContainer.addEventListener("drop", function(e) {
-            toDoListContainer.appendChild(selected);
-            selected = null;
-        
-        });}
     inputBox.value='';
     saveData();
 
-}
+}}
     
-
-
-
-
-
-
-
-/*listContainer.addEventListener("click", function(e){
-
-    if(e.target.tagName === "LI"){
-        e.target.classList.toggle("checked");
-        saveData();
-    }
-    else if (e.target.tagName === "CLOSETODOLISTTASK"){
-        e.target.parentElement.remove();
-        saveData();
-        }
-   
-}, false )*/
 
 
 listContainer.addEventListener("click", function(e){
