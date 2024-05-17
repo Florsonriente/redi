@@ -4,6 +4,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
+
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Gochi+Hand&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 *{
   list-style-type: none;
   text-decoration: none;
@@ -12,7 +15,8 @@
   text-decoration: 0;
   box-sizing: border-box;
   color:black;
-  font-family: Montserrat;
+font-family: Montserrat;
+  /* font-family: "Cormorant Garamond", serif;*/
 }
 
 
@@ -86,11 +90,10 @@ header{
   align-items: center;
   justify-items: center;
   margin: 0;
- 
- 
-  
-  
-}
+  background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9d5218142352465.62659dff37688.gif");
+ background-size: cover;
+ width:100%;
+  }
 
 #image_wrapper {
   filter: invert(1);
@@ -511,10 +514,10 @@ margin-bottom: -2em;}
 
   .calculationform{
    
-    width:var(--innerwidth);
+    
     padding: 3em;
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 1fr 1fr;
     /*grid-template-rows: 3fr 1fr;*/
     align-items: flex-start;
     gap:5em;
@@ -904,7 +907,7 @@ p.checked{
     margin: 2em;
     background-size: cover;
     background-position: center ;
-    color:white;
+    
 }
 
 p.checked #text{

@@ -246,7 +246,11 @@ closeButton.addEventListener('click',function(){
 //////////////////////////////////// RANDOM CARBON FACTS 
 
 
-let carbonPhrases = ["Fire Extinguishers: With 10 kg of emitted carbon, you could potentially fill 2-5 fire extinguishers, depending on their size and CO2 content. 2-5 fire extinguishers could be not sufficient to extinguish a forest fire or a fire in a park, but probably to save a couple of trees. ", "Water Treatment: With 10 kg of emitted carbon, you could potentially treat approximately 20-50 cubic meters of water.The amount of water would be sufficient to supply the needs of approximately 9 to 35 medium-sized dogs for a month.", "Carbonated Water: With 10 kg of emitted carbon, you could potentially carbonate approximately 3,333 to 5,000 liters of beverage.  Carbonated water offers a sugar-free alternative to sodas and other sweetened drinks, allowing diabetics to enjoy a refreshing beverage without affecting their blood sugar levels. People with diabetes need to monitor their blood sugar levels carefully and may need to limit their intake of sugary beverages. If we assume an average daily consumption of 1 liter, then 3,333 to 5,000 liters would last between approximately 3 to 5 years for one person.",  "Algae Cultivation: With 10 kg of emitted carbon, you could potentially cultivate 5-10 kg of algae biomass. With 5-10 kg of algae biomass, it's plausible to produce several hundred to over a thousand bottles of dietary supplements, to support overall health and well-being, immune function, lower cholesterol levels, reduce inflammation, and support cardiovascular function, reducing the risk of heart disease.", "Greenhouse Cultivation: With 10 kg of emitted carbon, you could potentially enrich a greenhouse covering approximately 11.8 to 14.7 square meters. With such size of a greenhouse you can approximately cultivate approximately 15-20 tomato plants in a greenhouse of this size. Total yield of tomatoes from all plants in the greenhouse could range from approximately 75 kg to 200 kg, depending on the yield per plant and the number of plants grown.", "Enrich a greenhouse that can yield from 10kg to 25kg lettuce. Assuming you can grow approximately 50 lettuce plants in the greenhouse.So, considering the available space in the greenhouse, the total yield of lettuce from all plants could range from approximately 10 kg to 25 kg, depending on the yield per plant.", 
+let carbonPhrases = ["Fire Extinguishers: With 10 kg of emitted carbon, you could potentially fill 2-5 fire extinguishers, depending on their size and CO2 content. 2-5 fire extinguishers could be not sufficient to extinguish a forest fire or a fire in a park, but probably to save a couple of trees. ", "Water Treatment: With 10 kg of emitted carbon, you could potentially treat approximately 20-50 cubic meters of water.The amount of water would be sufficient to supply the needs of approximately 9 to 35 medium-sized dogs for a month.", 
+"Carbonated Water: With 10 kg of emitted carbon, you could potentially carbonate approximately 3,333 to 5,000 liters of beverage.  Carbonated water offers a sugar-free alternative to sodas and other sweetened drinks, allowing diabetics to enjoy a refreshing beverage without affecting their blood sugar levels. People with diabetes need to monitor their blood sugar levels carefully and may need to limit their intake of sugary beverages. If we assume an average daily consumption of 1 liter, then 3,333 to 5,000 liters would last between approximately 3 to 5 years for one person.",  
+"Algae Cultivation: With 10 kg of emitted carbon, you could potentially cultivate 5-10 kg of algae biomass. With 5-10 kg of algae biomass, it's plausible to produce several hundred to over a thousand bottles of dietary supplements, to support overall health and well-being, immune function, lower cholesterol levels, reduce inflammation, and support cardiovascular function, reducing the risk of heart disease.", 
+"Greenhouse Cultivation: With 10 kg of emitted carbon, you could potentially enrich a greenhouse covering approximately 11.8 to 14.7 square meters. With such size of a greenhouse you can approximately cultivate approximately 15-20 tomato plants in a greenhouse of this size. Total yield of tomatoes from all plants in the greenhouse could range from approximately 75 kg to 200 kg, depending on the yield per plant and the number of plants grown.", 
+"Enrich a greenhouse that can yield from 10kg to 25kg lettuce. Assuming you can grow approximately 50 lettuce plants in the greenhouse.So, considering the available space in the greenhouse, the total yield of lettuce from all plants could range from approximately 10 kg to 25 kg, depending on the yield per plant.", 
   "Cooling agent in scientific experiemnts. Dry ice, which is solid carbon dioxide (CO2), can be used as a cooling agent in various scientific experiments and applications. Perfect example of that is COVID-19 Vaccine. During the COVID-19 pandemic, dry ice played a crucial role in the distribution of mRNA vaccines, such as those developed by Pfizer-BioNTech and Moderna. These vaccines require ultra-low temperatures for storage and transportation, and dry ice was used to maintain the necessary cold chain.  This application of dry ice was vital in facilitating the rapid distribution of vaccines worldwide and controlling the spread of the virus."
 ]
 
@@ -429,9 +433,9 @@ function addTask(){
 
         p.classList.add("checked");
         const deco = toDoListBackgroundsSelector();
-        p.style=deco.style;
-        p.size = deco.size;
-        p.color = deco.color;
+        p.style.backgroundImage = deco.image;
+        p.style.backgroundSize = deco.size;
+        p.style.backgroundColor = deco.color;
 
     inputBox.value='';
     saveData();
@@ -469,17 +473,23 @@ function showTask(){
 */
 const toDoListBackgrounds = [
 
-    {
-      style: "background: radial-gradient(circle, transparent 20%, #556645 20%, #556645 80%, transparent 80%, transparent) 0% 0% / 52px 52px, radial-gradient(circle, transparent 20%, #556645 20%, #556645 80%, transparent 80%, transparent) 26px 26px / 52px 52px, linear-gradient(#849c0b 2px, transparent 2px) 0px -1px / 26px 26px, linear-gradient(90deg, #849c0b 2px, #556645 2px) -1px 0px / 26px 26px #556645",
-      size: "background-size: 52px 52px, 52px 52px, 26px 26px, 26px 26px",
-      color: "background-color: #556645"
-    },
-    {
-        style: "background: radial-gradient(circle, transparent 20%, #a8a398 20%, #a8a398 80%, transparent 80%, transparent) 0% 0% / 52px 52px, radial-gradient(circle, transparent 20%, #a8a398 20%, #a8a398 80%, transparent 80%, transparent) 26px 26px / 52px 52px, linear-gradient(#849c0b 2px, transparent 2px) 0px -1px / 26px 26px, linear-gradient(90deg, #39513e 2px, #a8a398 2px) -1px 0px / 26px 26px #a8a398",
-        size: "background-size: 52px 52px, 52px 52px, 26px 26px, 26px 26px",
-        color: "background-color: #a8a398"
-      }/**/
-  ];
+       {
+        image: "radial-gradient(#39513E 2px, transparent 2px)",
+        size: "32px 32px",
+        color: "#E4E4ED"
+      },
+      {
+        image: "radial-gradient(#E4E4ED 2px, transparent 2px)",
+        size: "32px 32px",
+        color: "#958369"
+      },
+      {
+        image: "radial-gradient(#E4E4ED 2px, transparent 2px)",
+        size: "32px 32px",
+        color: "#C5CAAB"
+      },
+      
+    ];
 
 function toDoListBackgroundsSelector(){
     const index = Math.floor(Math.random() * toDoListBackgrounds.length);
