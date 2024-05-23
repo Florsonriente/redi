@@ -519,15 +519,15 @@ listContainer.addEventListener(
   false
 );
 
-// function saveData() {
-//   localStorage.setItem("data", listContainer.innerHTML);
-// }
-// function showTask() {
-//     const data = localStorage.getItem("data");
-//   if (data){
-//     listContainer.innerHTML=data;
-//   }
-//}
+ function saveData() {
+   localStorage.setItem("data", listContainer.innerHTML);
+ }
+ function showTask() {
+    const data = localStorage.getItem("data");
+   if (data){
+   listContainer.innerHTML=data;
+ }
+}
 
 document.addEventListener("DOMContentLoaded", showTask);
 /////TO DO LIST DIFFERENT BACKGROUNDS
