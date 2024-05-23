@@ -189,8 +189,30 @@ buttonMinimalistScore.addEventListener("click", () => {
   );
   console.log('averageScore is', averageScore)
 
-  document.getElementById("scoreValue").innerHTML = averageScore;
+  printNumbers(4, 1, averageScore)
 });
+
+
+function printNumbers(from, to, averageScore){
+    let start = from
+    let end = to
+    let intervalId = null
+
+    if(!intervalId){
+        intervalId = setInterval(() => {
+            if(start === end && intervalId){
+                clearInterval(intervalId)
+                intervalId = null
+                document.getElementById("scoreValue").innerHTML = averageScore;
+            }else{
+                --start
+               document.getElementById("scoreValue").innerHTML = start
+            }
+        }, 300)
+       
+    }
+}
+
 
 // PLANET OPACITY VALUE BASED ON UNSER INPUT
 
