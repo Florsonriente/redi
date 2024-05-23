@@ -519,15 +519,15 @@ listContainer.addEventListener(
   false
 );
 
-function saveData() {
-  localStorage.setItem("data", listContainer.innerHTML);
-}
-function showTask() {
-    const data = localStorage.getItem("data");
-  if (data){
-    listContainer.innerHTML=data;
-  }
-}
+// function saveData() {
+//   localStorage.setItem("data", listContainer.innerHTML);
+// }
+// function showTask() {
+//     const data = localStorage.getItem("data");
+//   if (data){
+//     listContainer.innerHTML=data;
+//   }
+//}
 
 document.addEventListener("DOMContentLoaded", showTask);
 /////TO DO LIST DIFFERENT BACKGROUNDS
@@ -552,7 +552,7 @@ const toDoListBackgrounds = [
   {
     image: "radial-gradient(#E4E4ED 2px, transparent 2px)",
     size: "32px 32px",
-    color: "#C5CAAB",
+    color: "#E4E4ED",
   },
 ];
 
@@ -560,3 +560,13 @@ function toDoListBackgroundsSelector() {
   const index = Math.floor(Math.random() * toDoListBackgrounds.length);
   return toDoListBackgrounds[index];
 }
+
+
+////COOL CURSOR
+var cursor = document.getElementById("cursor");
+document.body.addEventListener("mousemove", function(e) {
+    cursor.style.left = e.clientX + "px";
+    cursor.style.top = e.clientY + "px";
+    //cursor.style.border = '1px solid black'; // Change border to red
+    //cursor.style.background = 'black'; // 
+});
