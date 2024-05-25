@@ -1,94 +1,91 @@
-@media only screen and (max-width: 1550px){
-
-.grid {
+@media only screen and (max-width: 1550px) {
+  .grid {
     display: grid;
     grid-template-rows: repeat(11 /*11*/, 70px);
-    grid-template-columns: repeat(/*19*/19, 70px);  
-
-}
+    grid-template-columns: repeat(/*19*/ 19, 70px);
+  }
 }
 @media only screen and (max-width: 1450px) {
-    :root {
-        
-        --white:white;
-        --font-weight: 400;
-        --font-size: 1.5em;
-        --h1font-size: 5em;
-        --h1font-weight: 100;
-        --scores-font-size: 13em;
-        --scores-font-weight: 200;
-      }
+  :root {
+    --white: white;
+    --font-weight: 400;
+    --font-size: 1.5em;
+    --h1font-size: 5em;
+    --h1font-weight: 100;
+    --scores-font-size: 13em;
+    --scores-font-weight: 200;
+  }
 
-   
-      #button_carbon_facts {
-        left: 70%;
-      }}
-      @media only screen and (max-width: 1300px) {
-
-        :root {
-          --width:1000px;
-        }
- 
+  #button_carbon_facts {
+    left: 70%;
+  }
+}
+@media only screen and (max-width: 1300px) {
+  :root {
+    --width: 1000px;
+  }
 
   .grid {
     display: grid;
     grid-template-rows: repeat(11 /*11*/, 50px);
-    grid-template-columns: repeat(/*19*/19, 50px);  
+    grid-template-columns: repeat(/*19*/ 19, 50px);
+  }
 
-} 
+  .carbonfacts {
+    width: 100%;
+  }
+  .carbontext h2 {
+    width: 100%;
+  }
 }
 
+@media only screen and (max-width: 1050px) {
+  :root {
+    --font-size: 1em;
+    --h1font-size: 3em;
+    --scores-font-size: 10em;
+    --width: 100%;
+  }
 
-  @media only screen and (max-width: 1050px) {
-    :root {
-      
-      
-      
-        --font-size: 1em;
-        --h1font-size: 3em;
-      
-        --scores-font-size: 10em;
-      
-        --width:100%;
-      }
+  h2{
+    text-align: center;
+  }
 
-.impactpage{
+  .impactpage {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
- 
-  .activities_all{
-    grid-template-columns: 1fr
   }
 
+  .activities_all {
+    grid-template-columns: 1fr;
+  }
 
   .carbontext {
     margin: auto;
-width: 500px;
-}
+      }
 
-.grid {
+  .grid {
     display: grid;
-    grid-template-rows: repeat(11 , 40px);
+    grid-template-rows: repeat(11, 40px);
     grid-template-columns: repeat(19, 20px);
-}
-
-#button_carbon_facts {
-    left: 50%;
   }
 
-  .calculationform{
+  #button_carbon_facts {
+    left: 50%;
+    transform: translate(-50%);
+  }
+
+  .calculationform {
     grid-template-columns: 1fr;
     align-items: center;
-    gap: 5em;
+    gap: 1em;
     justify-items: center;
     justify-content: center;
-    
   }
 
-  .left{
+  .left {
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -96,7 +93,7 @@ width: 500px;
     align-items: center;
   }
 
-  body > div.calculationpage > div > div.left > section:nth-child(7) /*a score calculator form, plaecemnt of input fields*/{
+  body > div.calculationpage > div > div.left > section:nth-child(7) /*a score calculator form, plaecemnt of input fields*/ {
     display: flex;
     flex-direction: column;
     align-content: center;
@@ -104,67 +101,62 @@ width: 500px;
     align-items: center;
   }
 
-  #city-form{
+  #city-form {
     display: flex;
     flex-direction: column;
     gap: 0.5em;
   }
+}
 
+@media only screen and (max-width: 600px) {
+  :root {
+    --width: 300px;
+    --h1font-size: 1.5em;
   }
 
-  @media only screen and (max-width: 600px) {
-
-    :root{
-        --width: 300px;
-        --h1font-size: 2em;
-    }
-
-    .carbonfacts {
-      width: 80%;
-    }
-
-    #button_carbon_facts {
-      left: 30%;
+ 
+  #input_box {
+    width: 200px;
   }
-    #input_box {
-      width: 200px;
-    }
 
-    .planet{
-        margin-bottom: 50vh;
-    }
-    .carbontext {
+  .planet {
+    margin-bottom: 50vh;
+  }
+  .carbontext {
     overflow-y: scroll;
     padding: 1em;
-    width:100%;
-    }
-    .carbontext h2 {
-      width: 100%;}
-
-    #image_wrapper{
-      width:100%;
-    }
-    #city-input{
-      width:70vw;
-    }
-    #city-form > button {
-
-      width: 70vw;
+     }
+ 
+  #image_wrapper {
+    width: 100%;
   }
-  p.checked {
-    
+  #city-input {
+    width: 70vw;
+  }
+  #city-form > button {
+    width: 70vw;
+  }
+  p.writtentext {
     width: auto;
-  }}
-
-  @media only screen and (max-width: 400px) {
-
-  
-
-    .grid {
-        display: grid;
-        grid-template-rows: repeat(11 , 20px);
-        grid-template-columns: repeat(19, 10px);
-    }
-    
-  
   }
+
+  #button_share,
+  #button_minimalist_score,
+  #button_carbon_facts,
+  .get_saved_carbon,
+  #city-form > button,
+  .to_do_list_button {
+    width: 100px;
+  }
+
+  p.written_task {
+    width: 100%;
+}
+
+@media only screen and (max-width: 400px) {
+  .grid {
+    display: grid;
+    grid-template-rows: repeat(11, 20px);
+    grid-template-columns: repeat(19, 10px);
+  }
+}

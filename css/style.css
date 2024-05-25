@@ -45,43 +45,43 @@ body {
   --scores-font-weight: 200;
   --width: 1300px;
 }
-#cursor {
+#small_circle_cursor {
   position: fixed;
  border-radius: 50%;
-  /**/ transform: translateX(-50%) translateY(-50%);
+ 
   pointer-events: none;
   left: -100px;
   top: 50%;
   z-index: 10000;
   /*border: 8px solid white;*/
-  width:30px;
-  height:30px;
-background-color: #39513e3a;
+  width:10px;
+  height:10px;
+background-color: #000000;
   transition: all 200ms ease-out;
 
 
 }
 
-/* #cursor_circle{
+/**/ #middle_circle_cursor{
   position: fixed;
   border-radius: 50%;
-    transform: translateX(-50%) translateY(-50%);
+  transform: translateX(-100%) translateY(-100%);
    pointer-events: none;
    left: -100px;
    top: 50%;
    mix-blend-mode: difference; 
-   background-color: rgb(174, 32, 32);
+   background-color: #39513e3a;
    z-index: 10000;
-   border: 8px solid white;
-   height: 50px;
-   width: 50px;
-} */
+   height: 30px;
+   width: 30px;
+   transition: all 600ms ease-out;
+} 
 
 
 
 .page {
   width: var(--width);
-  /*background-color: lightsalmon;*/
+  /**/background-color: lightsalmon;
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -604,7 +604,7 @@ h2 {
 .carbontext h2 {
   width: 70%;
   text-align: left;
-  font-size: 1.8em;
+  font-size: var(--font-size);
   font-weight: 500;
   padding: 0;
 }
@@ -813,7 +813,7 @@ body > div.planetpage > div > div > span:nth-child(4) {
 .to_do_list_page {
   width: 100vw;
   height: 100vh;
- /* background: green;*/
+ /**/ background: green;
 }
 
 /*TO DO LIST*/
@@ -914,7 +914,3 @@ p.written_task {
   background-position: center;
 }
 
-p.written_task #text {
-  color: red;
-  white-space: normal;
-}

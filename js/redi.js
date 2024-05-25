@@ -1,6 +1,7 @@
-/////ON SCROLL
+/////ON SCROLL--------------------------------------------------------------------------------------------------
 
 $(document).on("scroll", function () {
+    //setTimeout(function(){
   $(".block2, .hero").css({
     left: -1.3 * window.scrollY + "px",
     transition: "left 1.2s ease",
@@ -29,9 +30,10 @@ $(document).on("scroll", function () {
     transition: " 1.2s ease",
     "transition-delay": "0.5s ease",
   });
+//}, 500);
 });
 
-/*MINIMALIST CALCULATION SCORE*/
+//MINIMALIST CALCULATION SCORE-----------------------------------------------------------------------------------
 
 /*transportation score value calculation*/
 
@@ -463,12 +465,14 @@ function fetchAndUpdateAirQuality(url) {
 function updateGauge(aqi) {
   const needle = document.querySelector(".needle");
   const aqiSpan = document.getElementById("aqi");
+  const aqiDescription = document.getElementById("airquality_description");
 
   // Rotate the needle based on the AQI value
   const rotation = (aqi / 500) * 180; // Assuming AQI ranges from 0 to 500
   needle.style.transform = `rotate(${rotation}deg)`;
 
   aqiSpan.textContent = `${aqi}`;
+//  aqiDescription.textContent = `${aqi}`;
 
   // Log aqiSpan for testing purposes
   console.log(aqiSpan);
@@ -481,15 +485,29 @@ function updateGauge(aqi) {
   clouds.style.filter = "brightness(1)";
   clouds.style.filter = "blur(9px)";
 
-  if (aqi <= 40) {
+  if (aqi <= 50) {
     clouds.style.filter = "invert(0) brightness(1) blur(9px)";
-  } else if (aqi <= 80) {
+    aqiDescription.textContent = `The air quality index is ${aqi} and it means that the air quality is good. Nevertheless we can still think about the ways to amke it better!`;
+
+  } else if (aqi <= 100) {
     clouds.style.filter = "invert(0) brightness(0.5) blur(9px)";
+    aqiDescription.textContent = `The air quality index is ${aqi} and it means that the air quality is moderate. Usually sensitive individuals should consider limiting prolonged outdoor exertion.`;
+
   } else if (aqi <= 150) {
     clouds.style.filter = "invert(0) brightness(0.3) blur(9px)";
-  } else {
+    aqiDescription.textContent = `The air quality index is ${aqi} and it means that the air quality is Unhealthy for Sensitive Groups. Children, active adults, and people with respiratory disease, such as asthma, should limit prolonged outdoor exertion.`;
+
+  } else if (aqi <= 200){
     clouds.style.filter = "invert(1) brightness(0)";
+    aqiDescription.textContent = `The air quality index is ${aqi} and it means that the air quality is Unhealthy. Children, active adults, and people with respiratory disease, such as asthma, should limit prolonged outdoor exertion.`;
+  } else if (aqi <= 300){
+    clouds.style.filter = "invert(1) brightness(0)";
+    aqiDescription.textContent = `The air quality index is ${aqi} and it means that the air quality is Very Unhealthy. Children, active adults, and people with respiratory disease, such as asthma, should avoid outdoor exertion; everyone else should limit outdoor exertion.`;
+  }  else if (aqi <= 500){
+    clouds.style.filter = "invert(1) brightness(0)";
+    aqiDescription.textContent = `The air quality index is ${aqi} and it means that the air quality is Hazardous. Everyone should avoid all physical activity outdoors.`;
   }
+
 }
 
 ////// TO DO LIST
@@ -503,6 +521,7 @@ function addTask() {
     let p = document.createElement("p");
     p.innerHTML = inputBox.value;
     listContainer.appendChild(p);
+    p.setAttribute("draggable", true);
 
     console.log(p.innerHTML.length);
     let words = p.innerHTML.split(' ');
@@ -512,6 +531,7 @@ function addTask() {
     if (word.length >=20)  {
         alert("Oh I see you are in a flow, but can u pls write more accurately?");
     }
+
  });
 
     let closeToDoListTask = document.createElement("span");
@@ -585,10 +605,18 @@ function toDoListBackgroundsSelector() {
 
 
 ////COOL CURSOR
-var cursor = document.getElementById("cursor");
+var smallCircleCursor = document.getElementById("small_circle_cursor");
 document.body.addEventListener("mousemove", function(e) {
-    cursor.style.left = e.clientX + "px";
-    cursor.style.top = e.clientY + "px";
+    smallCircleCursor.style.left = e.clientX + "px";
+    smallCircleCursor.style.top = e.clientY + "px";
+    //cursor.style.border = '1px solid black'; // Change border to red
+    //cursor.style.background = 'black'; // 
+});
+
+var middleCircleCursor = document.getElementById("middle_circle_cursor");
+document.body.addEventListener("mousemove", function(e) {
+    middleCircleCursor.style.left = e.clientX + "px";
+    middleCircleCursor.style.top = e.clientY + "px";
     //cursor.style.border = '1px solid black'; // Change border to red
     //cursor.style.background = 'black'; // 
 });
