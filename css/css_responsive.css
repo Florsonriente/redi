@@ -145,13 +145,14 @@
   #button_carbon_facts,
   .get_saved_carbon,
   #city-form > button,
-  .to_do_list_button {
+  .to_do_list_button,
+  .button_speak {
     width: 100px;
   }
 
   p.written_task {
     width: 100%;
-}
+}}
 
 @media only screen and (max-width: 400px) {
   .grid {

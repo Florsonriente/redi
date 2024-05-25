@@ -267,7 +267,7 @@
   </div>
 
   <div class="carbonfactspage">
-    <h2> Is the saved amount of CO2 big number or not? <br>
+    <h2 id="carbonfactspage_questions"> Is the saved amount of CO2 big number or not? <br>
       We have used to measure things with cms, kms, euros and so on. But can we measure our CO2 emissions?<br>
       Are 10kg of CO2 is big or not?
       <br>
@@ -277,6 +277,7 @@
       Click on the button below to <br>
       see the random activities that might potentially need roughly the same amount of CO2
     </h2>
+    <button class ="button_speak" onclick="speakCo2()">Speak <img src="./icons/voice.png" style="    width: 40px; filter: invert(1);" alt=""></button></p>
     <!-- <h1 class="typoeffect"> <span>T</span><span>h</span><span>e</span> <span>l</span><span>e</span><span>s</span><span>s</span> <span>w</span><span>e</span> <span>c</span><span>o</span><span>n</span><span>s</span><span>u</span><span>m</span><span>e</span> <span>t</span><span>h</span><span>e</span> <span>b</span><span>e</span><span>t</span><span>t</span><span>t</span><span>e</span><span>r</span></h1>-->
 
 
@@ -483,12 +484,14 @@
 
       <div class="row">
         <input type="text" id="input_box" placeholder="Write down your thoughts">
-        <button onclick="addTask()" class="to_do_list_button"> Add</button>
+        <button onclick="addTask(), speak()" class="to_do_list_button"> Add</button>
+      <!--  <button onclick="speak()">Speak</button></p>-->
       </div>
 
 
       <div id="list_container">
-        <!--<p class="written_task"> Task1</p>
+
+        <!--<p class="written_task"> Task1       
    <p class="written_task " > Task2</p>
    <p class="written_task "> Task3</p>-->
 

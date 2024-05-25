@@ -1,7 +1,7 @@
 /////ON SCROLL--------------------------------------------------------------------------------------------------
 
 $(document).on("scroll", function () {
-    //setTimeout(function(){
+  //setTimeout(function(){
   $(".block2, .hero").css({
     left: -1.3 * window.scrollY + "px",
     transition: "left 1.2s ease",
@@ -30,7 +30,7 @@ $(document).on("scroll", function () {
     transition: " 1.2s ease",
     "transition-delay": "0.5s ease",
   });
-//}, 500);
+  //}, 500);
 });
 
 //MINIMALIST CALCULATION SCORE-----------------------------------------------------------------------------------
@@ -42,33 +42,34 @@ let transportationModeSummary = function () {
     'input[name="answertransport"]:checked'
   );
   let scoreTransport = 0;
-  try{
+  try {
     if (!selectedTransport) {
-        throw new Error("Please make your transport choice for proper calculation!");
+      throw new Error(
+        "Please make your transport choice for proper calculation!"
+      );
     }
-  if (selectedTransport) {
-    switch (selectedTransport.value) {
-      case "car":
-        scoreTransport = 0;
-        break;
-      case "public transport":
-        scoreTransport = 50;
-        break;
-      case "bicycle":
-        scoreTransport = 100;
-        break;
-      default:
-        scoreTransport = 0;
-        break;
+    if (selectedTransport) {
+      switch (selectedTransport.value) {
+        case "car":
+          scoreTransport = 0;
+          break;
+        case "public transport":
+          scoreTransport = 50;
+          break;
+        case "bicycle":
+          scoreTransport = 100;
+          break;
+        default:
+          scoreTransport = 0;
+          break;
+      }
     }
-  }
 
-  return scoreTransport;}
-  catch (error) {
+    return scoreTransport;
+  } catch (error) {
     alert("An error occurred during the transport calculation:" + error);
     // return 0;
-  } 
-
+  }
 };
 
 /*dietary choice  score value calculation*/
@@ -78,31 +79,31 @@ let dietaryChoiceSummary = function () {
   let scoreDiet = 0;
 
   try {
-  if (!selectedDiet) {
-    throw new Error("Please make your diet choice for proper calculation!") ;
-  }     
-    {    
-    switch (selectedDiet.value) {
-      case "snacks&cola":
-        scoreDiet = 0;
-        break;
-      case "smartomnivore":
-        scoreDiet = 50;
-        break;
-      case "vegan":
-        scoreDiet = 100;
-        break;
-      default:
-        scoreDiet = 0;
-        break;
+    if (!selectedDiet) {
+      throw new Error("Please make your diet choice for proper calculation!");
     }
-  }
+    {
+      switch (selectedDiet.value) {
+        case "snacks&cola":
+          scoreDiet = 0;
+          break;
+        case "smartomnivore":
+          scoreDiet = 50;
+          break;
+        case "vegan":
+          scoreDiet = 100;
+          break;
+        default:
+          scoreDiet = 0;
+          break;
+      }
+    }
 
-  return scoreDiet;
-}catch (error) {
+    return scoreDiet;
+  } catch (error) {
     alert("An error occurred during the diet calculation:" + error);
-      //return 0;
-  } 
+    //return 0;
+  }
 };
 
 /*energy consumption score calculation*/
@@ -115,56 +116,62 @@ let energyConsumptionSummary = function (
 ) {
   let scoreEnergy = 0;
   try {
-  if (energyConsumers < 1 || !energyConsumers) {
-    throw new Error("Please enter the valid number of people living at your place, you included!!!") ;
-  }  else if (energyConsumers === 1) {
-    if (energyConsumptionValue < 500) {
-      scoreEnergy = 100;
-    } else if (
-      energyConsumptionValue >= 500 &&
-      energyConsumptionValue <= 1000
-    ) {
-      scoreEnergy = 50;
-    } else if (energyConsumptionValue >= 1001) {
-      scoreEnergy = 0;
+    if (energyConsumers < 1 || !energyConsumers) {
+      throw new Error(
+        "Please enter the valid number of people living at your place, you included!!!"
+      );
+    } else if (energyConsumers === 1) {
+      if (energyConsumptionValue < 500) {
+        scoreEnergy = 100;
+      } else if (
+        energyConsumptionValue >= 500 &&
+        energyConsumptionValue <= 1000
+      ) {
+        scoreEnergy = 50;
+      } else if (energyConsumptionValue >= 1001) {
+        scoreEnergy = 0;
+      }
     }
-  }
 
-  if (energyConsumers === 2) {
-    if (energyConsumptionValue < 1000) {
-      scoreEnergy = 100;
-    } else if (
-      energyConsumptionValue >= 1000 &&
-      energyConsumptionValue <= 1500
-    ) {
-      scoreEnergy = 50;
-    } else if (energyConsumptionValue >= 1501) {
-      scoreEnergy = 0;
+    if (energyConsumers === 2) {
+      if (energyConsumptionValue < 1000) {
+        scoreEnergy = 100;
+      } else if (
+        energyConsumptionValue >= 1000 &&
+        energyConsumptionValue <= 1500
+      ) {
+        scoreEnergy = 50;
+      } else if (energyConsumptionValue >= 1501) {
+        scoreEnergy = 0;
+      }
     }
-  }
 
-  if (energyConsumers >= 3) {
-    if (energyConsumptionValue < 1500) {
-      scoreEnergy = 100;
-    } else if (
-      energyConsumptionValue >= 1500 &&
-      energyConsumptionValue <= 3000
-    ) {
-      scoreEnergy = 50;
-    } else if (energyConsumptionValue >= 3001) {
-      scoreEnergy = 0;
+    if (energyConsumers >= 3) {
+      if (energyConsumptionValue < 1500) {
+        scoreEnergy = 100;
+      } else if (
+        energyConsumptionValue >= 1500 &&
+        energyConsumptionValue <= 3000
+      ) {
+        scoreEnergy = 50;
+      } else if (energyConsumptionValue >= 3001) {
+        scoreEnergy = 0;
+      }
     }
-  }
 
-  if (energyConsumers >= 6)
-    // {throw new Error("Emmm there r so many of you! R u guys living in a hotel? The calculation fails");} 
-  {     alert("Emmm there r so many of you! R u guys living in a hotel? But let's calculate it anyway!!!")
-     }
-  return scoreEnergy;
-} catch (error) {
-    alert("An error occurred during the energy consumption calculation:" + error);
+    if (energyConsumers >= 6) {
+      // {throw new Error("Emmm there r so many of you! R u guys living in a hotel? The calculation fails");}
+      alert(
+        "Emmm there r so many of you! R u guys living in a hotel? But let's calculate it anyway!!!"
+      );
+    }
+    return scoreEnergy;
+  } catch (error) {
+    alert(
+      "An error occurred during the energy consumption calculation:" + error
+    );
     //return 0;
-  } 
+  }
 };
 
 let buttonMinimalistScore = document.getElementById("button_minimalist_score");
@@ -175,46 +182,43 @@ buttonMinimalistScore.addEventListener("click", () => {
     parseInt(energyConsumers.value),
     parseInt(energyConsumptionValue.value)
   );
-  console.log('scoreEnergy is', scoreEnergy);
+  console.log("scoreEnergy is", scoreEnergy);
 
   //TRANSPORTATION SCORE
   let scoreTransport = transportationModeSummary();
-  console.log('scoreTransport is', scoreTransport)
+  console.log("scoreTransport is", scoreTransport);
 
   //DIET SCORE
   let scoreDiet = dietaryChoiceSummary();
-  console.log('scoreDiet is', scoreDiet)
+  console.log("scoreDiet is", scoreDiet);
 
   //FINAL AVERAGE SCORE FROM ALL INPUTS.
   let averageScore = Math.floor(
     Math.round((scoreEnergy + scoreTransport + scoreDiet) / 3)
   );
-  console.log('averageScore is', averageScore)
+  console.log("averageScore is", averageScore);
 
-  printNumbers(4, 1, averageScore)
+  printNumbers(4, 1, averageScore);
 });
 
+function printNumbers(from, to, averageScore) {
+  let start = from;
+  let end = to;
+  let intervalId = null;
 
-function printNumbers(from, to, averageScore){
-    let start = from
-    let end = to
-    let intervalId = null
-
-    if(!intervalId){
-        intervalId = setInterval(() => {
-            if(start === end && intervalId){
-                clearInterval(intervalId)
-                intervalId = null
-                document.getElementById("scoreValue").innerHTML = averageScore;
-            }else{
-                --start
-               document.getElementById("scoreValue").innerHTML = start
-            }
-        }, 300)
-       
-    }
+  if (!intervalId) {
+    intervalId = setInterval(() => {
+      if (start === end && intervalId) {
+        clearInterval(intervalId);
+        intervalId = null;
+        document.getElementById("scoreValue").innerHTML = averageScore;
+      } else {
+        --start;
+        document.getElementById("scoreValue").innerHTML = start;
+      }
+    }, 300);
+  }
 }
-
 
 // PLANET OPACITY VALUE BASED ON UNSER INPUT
 
@@ -255,14 +259,14 @@ for (let j = 0; j < facts.length; j++) {
 }
 
 let seeImpact = function () {
-//   let activities = document.getElementsByClassName("activities");
-//   let facts = document.getElementsByClassName("carbonfacts");
+  //   let activities = document.getElementsByClassName("activities");
+  //   let facts = document.getElementsByClassName("carbonfacts");
 
   // Loop through Activities checkboxes & display or hide carbon facts
   for (let i = 0; i < activities.length; i++) {
     if (!activities[i].checked) {
       facts[i].style.display = "block";
-        } else {
+    } else {
       facts[i].style.display = "none";
     }
   }
@@ -271,16 +275,15 @@ let seeImpact = function () {
 seeImpact();
 
 document.querySelectorAll(".activities").forEach(function (activities) {
-   
   activities.addEventListener("input", seeImpact);
 });
 
-console.log('Activities ', activities);
-if (Array.isArray(activities)) {
-    console.log('activities is an array');
-  } else {
-    console.log('activities  is not an array');
-  }
+// console.log("Activities ", activities);
+// if (Array.isArray(activities)) {
+//   console.log("activities is an array");
+// } else {
+//   console.log("activities  is not an array");
+// }
 
 ///// OPEN AND CLOSE EXPLANATION BOXES TO EACH CARBON FACT7
 
@@ -293,7 +296,7 @@ let buttonReadExplanations = document.querySelectorAll(
   } else {
     console.log('buttonReadExplanations is not an array');
   }*/
-  
+
 let explanations = document.querySelectorAll(".explanations");
 let closeButtons = document.querySelectorAll(".close_explanations");
 
@@ -302,19 +305,18 @@ function showExplanation(event) {
   explanations[index].style.display = "flex";
 }
 
-/**/for (let i = 0; i < buttonReadExplanations.length; i++) {
+/**/ for (let i = 0; i < buttonReadExplanations.length; i++) {
   buttonReadExplanations[i].addEventListener("click", showExplanation);
-  
 }
 
 for (let i = 0; i < closeButtons.length; i++) {
   closeButtons[i].addEventListener("click", closeExplanation);
-  function closeExplanation(){
-    explanations[i].style.display="none";
+  function closeExplanation() {
+    explanations[i].style.display = "none";
   }
 }
 
- /* buttonReadExplanations.forEach(function(button) {
+/* buttonReadExplanations.forEach(function(button) {
     console.log('Button ', button);
     button.addEventListener("click", showExplanation);
   });
@@ -323,10 +325,6 @@ closeButtons.forEach(function (closeButton, index) {
     explanations[index].style.display = "none";
   });
 });*/
-
-
-
-
 
 //////////////////////////////////// RANDOM CARBON FACTS
 
@@ -385,7 +383,6 @@ buttonGetSavedCarbon.addEventListener("click", getSavedCarbon);
 /*document.querySelectorAll(".activities").forEach(function (activities) {
     activities.addEventListener("input", getSavedCarbon);
   });*/
-
 
 ////////////////////////////////// AIR QUALITY
 
@@ -472,7 +469,7 @@ function updateGauge(aqi) {
   needle.style.transform = `rotate(${rotation}deg)`;
 
   aqiSpan.textContent = `${aqi}`;
-//  aqiDescription.textContent = `${aqi}`;
+  //  aqiDescription.textContent = `${aqi}`;
 
   // Log aqiSpan for testing purposes
   console.log(aqiSpan);
@@ -488,26 +485,22 @@ function updateGauge(aqi) {
   if (aqi <= 50) {
     clouds.style.filter = "invert(0) brightness(1) blur(9px)";
     aqiDescription.textContent = `The air quality index is ${aqi} and it means that the air quality is good. Nevertheless we can still think about the ways to amke it better!`;
-
   } else if (aqi <= 100) {
     clouds.style.filter = "invert(0) brightness(0.5) blur(9px)";
     aqiDescription.textContent = `The air quality index is ${aqi} and it means that the air quality is moderate. Usually sensitive individuals should consider limiting prolonged outdoor exertion.`;
-
   } else if (aqi <= 150) {
     clouds.style.filter = "invert(0) brightness(0.3) blur(9px)";
     aqiDescription.textContent = `The air quality index is ${aqi} and it means that the air quality is Unhealthy for Sensitive Groups. Children, active adults, and people with respiratory disease, such as asthma, should limit prolonged outdoor exertion.`;
-
-  } else if (aqi <= 200){
+  } else if (aqi <= 200) {
     clouds.style.filter = "invert(1) brightness(0)";
     aqiDescription.textContent = `The air quality index is ${aqi} and it means that the air quality is Unhealthy. Children, active adults, and people with respiratory disease, such as asthma, should limit prolonged outdoor exertion.`;
-  } else if (aqi <= 300){
+  } else if (aqi <= 300) {
     clouds.style.filter = "invert(1) brightness(0)";
     aqiDescription.textContent = `The air quality index is ${aqi} and it means that the air quality is Very Unhealthy. Children, active adults, and people with respiratory disease, such as asthma, should avoid outdoor exertion; everyone else should limit outdoor exertion.`;
-  }  else if (aqi <= 500){
+  } else if (aqi <= 500) {
     clouds.style.filter = "invert(1) brightness(0)";
     aqiDescription.textContent = `The air quality index is ${aqi} and it means that the air quality is Hazardous. Everyone should avoid all physical activity outdoors.`;
   }
-
 }
 
 ////// TO DO LIST
@@ -521,18 +514,25 @@ function addTask() {
     let p = document.createElement("p");
     p.innerHTML = inputBox.value;
     listContainer.appendChild(p);
-    p.setAttribute("draggable", true);
 
     console.log(p.innerHTML.length);
-    let words = p.innerHTML.split(' ');
-    console.log(words[0].length);
-    //if (words[0].length >=20) 
- words.forEach(word => {
-    if (word.length >=20)  {
-        alert("Oh I see you are in a flow, but can u pls write more accurately?");
-    }
 
- });
+    let words = p.innerHTML.split(" ");
+    console.log(words[0].length);
+    //if (words[0].length >=20)
+    words.forEach((word) => {
+      if (word.length >= 20) {
+        alert(
+          "Oh I see you are in a flow, but can u pls write more accurately?"
+        );
+      }
+    });
+
+     function speak() {
+       var utterance = new SpeechSynthesisUtterance(p.innerHTML);
+       speechSynthesis.speak(utterance);
+     }
+    speak();
 
     let closeToDoListTask = document.createElement("span");
     closeToDoListTask.innerHTML = "\u00d7";
@@ -546,6 +546,7 @@ function addTask() {
     p.style.backgroundColor = deco.color;
 
     inputBox.value = "";
+
     saveData();
   }
 }
@@ -561,14 +562,14 @@ listContainer.addEventListener(
   false
 );
 
- function saveData() {
-   localStorage.setItem("data", listContainer.innerHTML);
- }
- function showTask() {
-    const data = localStorage.getItem("data");
-   if (data){
-   listContainer.innerHTML=data;
- }
+function saveData() {
+  localStorage.setItem("data", listContainer.innerHTML);
+}
+function showTask() {
+  const data = localStorage.getItem("data");
+  if (data) {
+    listContainer.innerHTML = data;
+  }
 }
 
 document.addEventListener("DOMContentLoaded", showTask);
@@ -603,20 +604,29 @@ function toDoListBackgroundsSelector() {
   return toDoListBackgrounds[index];
 }
 
-
 ////COOL CURSOR
 var smallCircleCursor = document.getElementById("small_circle_cursor");
-document.body.addEventListener("mousemove", function(e) {
-    smallCircleCursor.style.left = e.clientX + "px";
-    smallCircleCursor.style.top = e.clientY + "px";
-    //cursor.style.border = '1px solid black'; // Change border to red
-    //cursor.style.background = 'black'; // 
+document.body.addEventListener("mousemove", function (e) {
+  smallCircleCursor.style.left = e.clientX + "px";
+  smallCircleCursor.style.top = e.clientY + "px";
+  //cursor.style.border = '1px solid black'; // Change border to red
+  //cursor.style.background = 'black'; //
 });
 
 var middleCircleCursor = document.getElementById("middle_circle_cursor");
-document.body.addEventListener("mousemove", function(e) {
-    middleCircleCursor.style.left = e.clientX + "px";
-    middleCircleCursor.style.top = e.clientY + "px";
-    //cursor.style.border = '1px solid black'; // Change border to red
-    //cursor.style.background = 'black'; // 
+document.body.addEventListener("mousemove", function (e) {
+  middleCircleCursor.style.left = e.clientX + "px";
+  middleCircleCursor.style.top = e.clientY + "px";
+  //cursor.style.border = '1px solid black'; // Change border to red
+  //cursor.style.background = 'black'; //
 });
+
+
+/////////////////////////////  questions to speak
+
+    function speakCo2() {
+        var carbonFactsPageQuestions = document.getElementById("carbonfactspage_questions");
+      var utterance = new SpeechSynthesisUtterance(carbonFactsPageQuestions.innerHTML);
+      speechSynthesis.speak(utterance);
+    }
+    speakCo2();

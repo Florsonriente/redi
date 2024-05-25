@@ -330,7 +330,7 @@ h2 {
 /*BUTTONS*/
 
 #button_minimalist_score/*score calculate*/, 
-#button_carbon_facts, .get_saved_carbon, #city-form > button, .to_do_list_button {
+#button_carbon_facts, .get_saved_carbon, #city-form > button, .to_do_list_button, .button_speak {
   display: block;
   margin: auto;
   padding: 3em;
@@ -382,7 +382,7 @@ h2 {
 }
 
 #button_share:hover/*score results share*/, #button_minimalist_score:hover/*score calculate*/, 
-#button_carbon_facts:hover, .get_saved_carbon:hover, #city-form > button:hover, .to_do_list_button:hover {
+#button_carbon_facts:hover, .get_saved_carbon:hover, #city-form > button:hover, .to_do_list_button:hover, .button_speak:hover{
   color: #000000 !important;
   background: #e1ded2;
 }
