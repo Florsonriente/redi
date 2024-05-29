@@ -93,7 +93,7 @@ background-color: #000000;
 
 .page {
   width: var(--width);
-  /**/background-color: lightsalmon;
+  /*background-color: lightsalmon;*/
   display: flex;
   flex-direction: column;
   align-content: center;
@@ -829,7 +829,7 @@ body > div.planetpage > div > div > span:nth-child(4) {
 .to_do_list_page {
   width: 100vw;
   height: 100vh;
- /**/ background: green;
+ /* background: green;*/
 }
 
 /*TO DO LIST*/
