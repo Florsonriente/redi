@@ -132,7 +132,7 @@ header {
 #image_wrapper {
   filter: invert(1);
   filter: blur(9px);
-
+  transform: scale(1.5);
   z-index: -1;
 
   transition: all 0.5s ease-in;
