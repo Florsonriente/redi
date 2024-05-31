@@ -50,7 +50,7 @@ body {
 :root {
   --white: white;
   --font-weight: 400;
-  --font-size: 1.2em;
+  --font-size: 1.1em;
   --h1font-size: 5em;
   --h1font-weight: 100;
   --scores-font-size: 13em;
@@ -191,8 +191,8 @@ input[type="radio"] {
   -webkit-appearance: none; /* Remove default appearance */
   -moz-appearance: none;
   appearance: none;
-  width: 20px; /* Set width */
-  height: 20px; /* Set height */
+  width: var(--font-size); /* Set width */
+  height: var(--font-size); /* Set height */
   border: 2px solid black; /* Set border */
   border-radius: 50%; /* Circle shape */
   outline: none; /* Remove focus outline */

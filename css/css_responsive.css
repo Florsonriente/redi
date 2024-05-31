@@ -27,8 +27,8 @@
 
   .grid {
     display: grid;
-    grid-template-rows: repeat(11 /*11*/, 50px);
-    grid-template-columns: repeat(/*19*/ 19, 50px);
+    grid-template-rows: repeat(11 /*11*/, 70px);
+    grid-template-columns: repeat(/*19*/ 19, 70px);
   }
 
   .carbonfacts {
@@ -36,6 +36,10 @@
   }
   .carbontext h2 {
     width: 100%;
+  }
+
+  #image_wrapper {
+  transform: scale(1.5);
   }
 }
 
@@ -68,8 +72,8 @@
 
   .grid {
     display: grid;
-    grid-template-rows: repeat(11, 40px);
-    grid-template-columns: repeat(19, 20px);
+    grid-template-rows: repeat(11, 60px);
+    grid-template-columns: repeat(19, 40px);
   }
 
   #button_carbon_facts {
@@ -107,6 +111,14 @@
     gap: 0.5em;
   }
 }
+
+
+@media only screen and (max-width: 700px) {
+.grid {
+  display: grid;
+  grid-template-rows: repeat(11 /*11*/, 30px);
+  grid-template-columns: repeat(/*19*/ 19, 25px);
+}}
 
 @media only screen and (max-width: 600px) {
   :root {
@@ -158,7 +170,7 @@
 @media only screen and (max-width: 400px) {
   .grid {
     display: grid;
-    grid-template-rows: repeat(11, 20px);
-    grid-template-columns: repeat(19, 10px);
+    grid-template-rows: repeat(11, 30px);
+    grid-template-columns: repeat(19, 20px);
   }
 }

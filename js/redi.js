@@ -385,8 +385,8 @@ buttonGetSavedCarbon.addEventListener("click", getSavedCarbon);
   });*/
 
 
-
 //AIR QUALITY GOT FROM THE CITY from input form WRITTEN BY THE USER: 3 steps:
+
 // 1) STEP 1: GET THE lat and lon coordinates (for API url) from the city input from the user
 // 2) STEP 2: integrate the lat and lon from the city into API Key url and get the air quality 
 // 3) STEP 3 : do the styling of the needle, of the clouds and the h2 content describing the air quality 
@@ -396,8 +396,6 @@ buttonGetSavedCarbon.addEventListener("click", getSavedCarbon);
 
 //STEP 1a:   /* Converts a city name to latitude and longitude coordinates using the OpenStreetMap Nominatim API, the first city from the object: */
 
-
-
 async function getCoordinates(city) {
 
   const url = `https://nominatim.openstreetmap.org/search?q=${city}&format=json`;
@@ -405,14 +403,22 @@ async function getCoordinates(city) {
   const data = await response.json();
   console.log(data); // Log the data 
   if (data.length > 0) {
-    // sort by importance 
-    return { 
-        lat: parseFloat(data[0].lat), 
-        lon: parseFloat(data[0].lon), 
-        display_name: data[0].display_name
-         };
+      // Find the element with the highest importance
+      const importanceArray = data.map(d => d.importance);
+
+      // Use the spread operator to pass the array elements as individual arguments to Math.max
+      const maxImportance = Math.max(...importanceArray);
+      
+      // Find the index of the element with the highest importance
+      const indexOfHighestImportance = data.findIndex(d => d.importance === maxImportance);
+      
+      return { 
+          lat: parseFloat(data[indexOfHighestImportance].lat), 
+          lon: parseFloat(data[indexOfHighestImportance].lon), 
+          display_name: data[indexOfHighestImportance].display_name
+      };
   } else {
-    return null;
+      return null;
   }
 }
 
