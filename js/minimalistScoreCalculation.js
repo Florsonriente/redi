@@ -1,6 +1,7 @@
 //MINIMALIST CALCULATION SCORE-----------------------------------------------------------------------------------
 
 /*transportation score value calculation*/
+console.log('minimal Score!!!');
 
 const getTransportationModeSummary = function () {
   const selectedTransport = document.querySelector(
