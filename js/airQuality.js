@@ -13,22 +13,22 @@ async function getCoordinates(city) {
 
     const url = `https://nominatim.openstreetmap.org/search?q=${city}&format=json`;
     const response = await fetch(url);
-    const data = await response.json();
-    console.log(data); // Log the data 
-    if (data.length > 0) {
+    const cities = await response.json();
+    console.log("cities:", cities); // Log the data 
+    if (cities.length > 0) {
         // Find the element with the highest importance
-        const importanceArray = data.map(d => d.importance);
+        const importanceArray = cities.map(city => city.importance);
   
         // Use the spread operator to pass the array elements as individual arguments to Math.max
         const maxImportance = Math.max(...importanceArray);
         
         // Find the index of the element with the highest importance
-        const indexOfHighestImportance = data.findIndex(d => d.importance === maxImportance);
+        const indexOfHighestImportance = cities.findIndex(city => city.importance === maxImportance);
         
         return { 
-            lat: parseFloat(data[indexOfHighestImportance].lat), 
-            lon: parseFloat(data[indexOfHighestImportance].lon), 
-            display_name: data[indexOfHighestImportance].display_name
+            lat: parseFloat(cities[indexOfHighestImportance].lat), 
+            lon: parseFloat(cities[indexOfHighestImportance].lon), 
+            display_name: cities[indexOfHighestImportance].display_name
         };
     } else {
         return null;
@@ -40,10 +40,11 @@ async function getCoordinates(city) {
   const form = document.getElementById("city-form");
   form.addEventListener("submit", async (event) => {
     event.preventDefault();
-  
+
     let locationName;
-    const cityInput = document.getElementById("city-input");
-    const city = cityInput.value;
+    let url; 
+
+    const city = document.getElementById("city-input").value;
     const aqiDescription = document.getElementById("airquality_description");
   
     const location = await getCoordinates(city);
@@ -51,7 +52,7 @@ async function getCoordinates(city) {
       locationName = location.display_name;
   
       // Construct the URL with the actual latitude and longitude
-      const url = `https://cors-anywhere.herokuapp.com/https://api.ambeedata.com/latest/by-lat-lng?lat=${location.lat}&lng=${location.lon}`;
+      url = `https://cors-anywhere.herokuapp.com/https://api.ambeedata.com/latest/by-lat-lng?lat=${location.lat}&lng=${location.lon}`;
    
   
       // Call the API with the updated URL
@@ -65,13 +66,45 @@ async function getCoordinates(city) {
   
   //STEP 2b: calls our Air Quality API with correct url
   
-  function fetchAndUpdateAirQuality(url, locationName) {
+  // function fetchAndUpdateAirQuality(url, locationName) {
   
       
+  //   // Define your API key
+  //   const api_key =
+  //     //"1b5d859b6824861a56ffd2a5d3a1a827705605b7e6d91dd98333914220dcf651";
+  //     "bf5065e8187b79be1d6e99b3ec2823ff430f81079d4e9af613967b6e71a975b9";
+  
+  //   // Set headers with your API key
+  //   const headers = {
+  //     "x-api-key": api_key,
+  //     "Content-type": "application/json",
+  //   };
+  
+  //   const options = {
+  //     method: "GET",
+  //     headers: headers,
+  //   };
+  
+  //   fetch(url, options)
+  //     .then((response) => {
+  //       if (response.ok) return response.json();
+  //       throw new Error("Network response was not ok.");
+  //     })
+  //     .then((data) => {
+  //       const airQuality = data?.stations?.[0]?.AQI;
+  //       if (airQuality !== undefined) {
+  //         updateAirQualityCloudGaugeDescription(airQuality, locationName);
+  //       } else {
+  //         throw new Error("Invalid data received from the API");
+  //       }
+  //     })
+  //     .catch((error) => console.error("Error fetching air quality data:", error));
+  // }
+
+
+  async function fetchAndUpdateAirQuality(url, locationName) {
     // Define your API key
-    const api_key =
-      //"1b5d859b6824861a56ffd2a5d3a1a827705605b7e6d91dd98333914220dcf651";
-      "bf5065e8187b79be1d6e99b3ec2823ff430f81079d4e9af613967b6e71a975b9";
+    const api_key = "bf5065e8187b79be1d6e99b3ec2823ff430f81079d4e9af613967b6e71a975b9";
   
     // Set headers with your API key
     const headers = {
@@ -84,21 +117,29 @@ async function getCoordinates(city) {
       headers: headers,
     };
   
-    fetch(url, options)
-      .then((response) => {
-        if (response.ok) return response.json();
+    try {
+      const response = await fetch(url, options);
+  
+      if (!response.ok) {
         throw new Error("Network response was not ok.");
-      })
-      .then((data) => {
-        const airQuality = data?.stations?.[0]?.AQI;
-        if (airQuality !== undefined) {
-          updateAirQualityCloudGaugeDescription(airQuality, locationName);
-        } else {
-          throw new Error("Invalid data received from the API");
-        }
-      })
-      .catch((error) => console.error("Error fetching air quality data:", error));
+      }
+  
+      const data = await response.json();
+      const airQuality = data?.stations?.[0]?.AQI;
+  
+      // Log the air quality to the console
+      console.log("Air Quality:", airQuality);
+  
+      if (airQuality !== undefined) {
+        updateAirQualityCloudGaugeDescription(airQuality, locationName);
+      } else {
+        throw new Error("Invalid data received from the API");
+      }
+    } catch (error) {
+      console.error("Error fetching air quality data:", error);
+    }
   }
+  
   
   // 3) STEP 3 : do the styling of the needle, of the clouds and the h2 content describing the air quality 
   

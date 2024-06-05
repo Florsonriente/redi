@@ -1,5 +1,6 @@
 const inputBox = document.getElementById("input_box");
 const listContainer = document.getElementById("list_container");
+
 function addTask() {
   if (inputBox.value === "") {
     alert("Lets think out some task for u");
@@ -21,10 +22,10 @@ function addTask() {
       }
     });
 
-     function speak() {
-       var utterance = new SpeechSynthesisUtterance(p.innerHTML);
-       speechSynthesis.speak(utterance);
-     }
+    function speak() {
+      var utterance = new SpeechSynthesisUtterance(p.innerHTML);
+      speechSynthesis.speak(utterance);
+    }
     speak();
 
     let closeToDoListTask = document.createElement("span");
@@ -96,4 +97,3 @@ function toDoListBackgroundsSelector() {
   const index = Math.floor(Math.random() * toDoListBackgrounds.length);
   return toDoListBackgrounds[index];
 }
-

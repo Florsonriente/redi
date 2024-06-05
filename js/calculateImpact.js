@@ -88,7 +88,7 @@ const getSavedCarbon = function () {
 
   console.log("Result: ");
   showSavedCarbon.innerHTML = sumSavedCarbon + "kg";
-  sumSavedCarbon.style.fontsize = "13em";
+  //sumSavedCarbon.style.fontsize = "13em";
   //sumSavedCarbon.style.margintop = "0.5em";
   return sumSavedCarbon;
 };

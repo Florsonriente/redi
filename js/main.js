@@ -33,7 +33,7 @@ $(document).on("scroll", function () {
   //}, 500);
 });
 
-////COOL CURSOR
+//COOL CURSOR--------------------------------------------------------------------------------------------------
 var smallCircleCursor = document.getElementById("small_circle_cursor");
 document.body.addEventListener("mousemove", function (e) {
   smallCircleCursor.style.left = e.clientX + "px";
@@ -49,7 +49,6 @@ document.body.addEventListener("mousemove", function (e) {
   //cursor.style.border = '1px solid black'; // Change border to red
   //cursor.style.background = 'black'; //
 });
-
 
 // PLANET OPACITY VALUE BASED ON UNSER INPUT
 
@@ -71,9 +70,7 @@ let updatePlanetOpacity = function () {
 updatePlanetOpacity();
 inputSlider.addEventListener("input", updatePlanetOpacity);
 
-
-
-//////////////////////////////////// RANDOM CARBON FACTS
+//RANDOM CARBON FACTS-------------------------------------------------------------------------------------------------
 
 let carbonPhrases = [
   "Fire Extinguishers: With 10 kg of emitted carbon, you could potentially fill 2-5 fire extinguishers, depending on their size and CO2 content. 2-5 fire extinguishers could be not sufficient to extinguish a forest fire or a fire in a park, but probably to save a couple of trees. ",
@@ -102,16 +99,14 @@ function showCarbonFact() {
 
 buttonCarbon.addEventListener("click", showCarbonFact);
 
-
-/////////////////////////////  questions to speak
-
+//QUESTIONS TO SPEAK
 function speakCo2() {
-  var carbonFactsPageQuestions = document.getElementById("carbonfactspage_questions");
-var utterance = new SpeechSynthesisUtterance(carbonFactsPageQuestions.innerHTML);
-speechSynthesis.speak(utterance);
+  var carbonFactsPageQuestions = document.getElementById(
+    "carbonfactspage_questions"
+  );
+  var utterance = new SpeechSynthesisUtterance(
+    carbonFactsPageQuestions.innerHTML
+  );
+  speechSynthesis.speak(utterance);
 }
 speakCo2();
-
-
-
-

@@ -20,15 +20,15 @@
     left: 70%;
   }
 }
-@media only screen and (max-width: 1300px) {
+@media only screen and (max-width: 1340px) {
   :root {
     --width: 1000px;
   }
 
   .grid {
     display: grid;
-    grid-template-rows: repeat(11 /*11*/, 70px);
-    grid-template-columns: repeat(/*19*/ 19, 70px);
+    grid-template-rows: repeat(11 /*11*/, 50px);
+    grid-template-columns: repeat(/*19*/ 19, 50px);
   }
 
   .carbonfacts {
@@ -39,7 +39,7 @@
   }
 
   #image_wrapper {
-  transform: scale(1.5);
+  transform: scale(1);
   }
 }
 
@@ -76,6 +76,10 @@
     grid-template-columns: repeat(19, 40px);
   }
 
+  .button_read_explanation {
+    text-align: center;
+}
+
   #button_carbon_facts {
     left: 50%;
     transform: translate(-50%);
@@ -87,6 +91,7 @@
     gap: 1em;
     justify-items: center;
     justify-content: center;
+    padding:0.5em;
   }
 
   .left {
@@ -110,15 +115,19 @@
     flex-direction: column;
     gap: 0.5em;
   }
-}
+
+  #finalscore {
+    align-items: center;
+  }}
 
 
 @media only screen and (max-width: 700px) {
 .grid {
   display: grid;
-  grid-template-rows: repeat(11 /*11*/, 30px);
-  grid-template-columns: repeat(/*19*/ 19, 25px);
-}}
+  grid-template-rows: repeat(11 /*11*/, 20px);
+  grid-template-columns: repeat(/*19*/ 19, 20px);
+}
+}
 
 @media only screen and (max-width: 600px) {
   :root {
@@ -170,7 +179,7 @@
 @media only screen and (max-width: 400px) {
   .grid {
     display: grid;
-    grid-template-rows: repeat(11, 30px);
-    grid-template-columns: repeat(19, 20px);
+    grid-template-rows: repeat(11, 12px);
+    grid-template-columns: repeat(19, 15px);
   }
 }
