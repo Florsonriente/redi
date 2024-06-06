@@ -100,13 +100,13 @@ function showCarbonFact() {
 buttonCarbon.addEventListener("click", showCarbonFact);
 
 //QUESTIONS TO SPEAK
-function speakCo2() {
-  var carbonFactsPageQuestions = document.getElementById(
-    "carbonfactspage_questions"
-  );
-  var utterance = new SpeechSynthesisUtterance(
-    carbonFactsPageQuestions.innerHTML
-  );
-  speechSynthesis.speak(utterance);
-}
-speakCo2();
+// function speakCo2() {
+//   var carbonFactsPageQuestions = document.getElementById(
+//     "carbonfactspage_questions"
+//   );
+//   var utterance = new SpeechSynthesisUtterance(
+//     carbonFactsPageQuestions.innerHTML
+//   );
+//   speechSynthesis.speak(utterance);
+// }
+// speakCo2();
