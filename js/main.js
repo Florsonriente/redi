@@ -21,12 +21,12 @@ $(document).on("scroll", function () {
     opacity: "100%",
     transition: " 1.2s ease",
     "transition-delay": "0.5s ease",
-    "margin-left": "-30vw",
+   // "margin-left": "-30vw",
   });
 
   $(".subblockpics:nth-child(3").css({
     opacity: "100%",
-    "margin-left": "-20vw",
+   // "margin-left": "-20vw",
     transition: " 1.2s ease",
     "transition-delay": "0.5s ease",
   });
