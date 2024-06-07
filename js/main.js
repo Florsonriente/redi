@@ -75,10 +75,9 @@ inputSlider.addEventListener("input", updatePlanetOpacity);
 let carbonPhrases = [
   "you could potentially fill 2-5 fire extinguishers to save a couple of trees. ",
   "you could potentially treat approximately 20-50 cubic meters of water sufficient 9 to 35 medium-sized dogs for a month.",
-  "you could potentially carbonate approximately to 5,0 liters of carbonated beverage. It would be approximately enough for 4 years for drinking water for a person with diabetes who needs to monitor his blood sugar levels carefully.",
-  "you could potentially cultivate 5-10 kg of algae biomass to produce thousand bottles of dietary supplements, to support overall health and well-being, immune function, lower cholesterol levels, reduce inflammation, and support cardiovascular function, reducing the risk of heart disease.",
+  "you could potentially carbonate approximately to 5,0 liters of carbonated beverage. It would be approximately enough for 1 week for drinking water for a person with diabetes who needs to monitor his blood sugar levels carefully.",
+  "you could potentially cultivate 5-10 kg of algae biomass to produce thousand bottles of dietary supplements, to lower cholesterol levels, reduce inflammation, and support cardiovascular function, reducing the risk of heart disease.",
   "you could potentially enrich a greenhouse covering approximately to 14.7 square meters & cultivate approximately 15-20 tomato plants meaning producing up to 200 kg of tomatoes. ",
-  "you could enrich a greenhouse to grow approximately to 25 kg of lettuce.",
   "you could produce dry ice for scientific experiments & rapid distribution of vaccines worldwide. During the COVID-19 pandemic, dry ice played a crucial role in the distribution of mRNA vaccines and controlling the spread of the virus.",
   "you could potentially supply CO2 for multiple hours of surgical procedures",
 ];
