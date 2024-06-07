@@ -453,8 +453,8 @@ h2 {
   flex-direction: column;
   max-width: var(--innerwidth);
   margin: auto;
-  background-image: url(../nature/vecteezy_realistic-and-minimalist-blurred-natural-light-windows_11972235.jpg);
-  background-size: cover;
+  /*background-image: url(../nature/vecteezy_realistic-and-minimalist-blurred-natural-light-windows_11972235.jpg);
+  background-size: cover;*/
   padding: 3em 0;
 }
 
@@ -666,7 +666,7 @@ h5 .show_saved_carbon {
   background-position: bottom;
   margin-top: 0.5em;
 
-  background-image: url(../nature/8c4f02d308762d7fa54a71be3b01d96a.jpg);
+  background-image: url(../nature/marcinecki_create_a_graphic_design_inspired_by_nature_subtle_an_3e7ba949-a0b2-4c71-a379-798a55de4bda.png);
   border-radius: 140px;
   background-repeat: no-repeat;
 }
@@ -721,7 +721,7 @@ body > div.planetpage > div > div > span:nth-child(4) {
   justify-items: center;
   margin: 0;
   /*background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9d5218142352465.62659dff37688.gif");*/
-  background-image: url("../nature/88f752b1af82ad03a7fd08e446d80981.jpg");
+  background-image: url("https://i.pinimg.com/564x/60/15/e1/6015e111ccb6f21e090664eceaca300a.jpg");
   background-size: cover;
   width: 100%;
   height:100%;
