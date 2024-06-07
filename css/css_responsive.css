@@ -41,6 +41,12 @@
   #image_wrapper {
   transform: scale(1);
   }
+
+  .carbontext h2 {
+
+    font-size: 1.5em;
+ 
+}
 }
 
 @media only screen and (max-width: 1050px) {
@@ -182,4 +188,10 @@
     grid-template-rows: repeat(11, 12px);
     grid-template-columns: repeat(19, 15px);
   }
+
+  .carbontext h2 {
+
+    font-size: 0.8em;
+ 
+}
 }
