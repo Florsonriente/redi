@@ -315,7 +315,7 @@ h2 {
 
 .scrolledpage {
   position: relative;
-  height: 5000px;
+  height: 5500px;
   overflow-x: auto;
 }
 
@@ -524,7 +524,7 @@ h2 {
 .carbontext h2 {
   width: 70%;
   text-align: left;
-  font-size: var(--font-size);
+  font-size: 3em;
   font-weight: 500;
   padding: 0;
 }
@@ -544,7 +544,7 @@ body > div.carbonfactspage > h2:nth-child(3) {
   /* background-image: radial-gradient(rgb(57 81 62 / 28%) 1px, transparent 2px);
     background-size: 32px 32px;
     background-color: rgb(228, 228, 237);*/
-  background-image: url(../nature/frame.jpg); 
+  background-image: url(../nature/277384b5e8bbf6de4487e8ba2c01458b.jpg); 
   background-size: cover;
   background-position: center;
 
@@ -666,7 +666,7 @@ h5 .show_saved_carbon {
   background-position: bottom;
   margin-top: 0.5em;
 
-  background-image: url(../nature/marcinecki_create_a_graphic_design_inspired_by_nature_subtle_an_3e7ba949-a0b2-4c71-a379-798a55de4bda.png);
+  background-image: url(../nature/d8761b2a59507d6931e31734274da928.jpg);
   border-radius: 140px;
   background-repeat: no-repeat;
 }
