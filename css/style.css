@@ -545,8 +545,8 @@ body > div.carbonfactspage > h2:nth-child(3) {
     background-size: 32px 32px;
     background-color: rgb(228, 228, 237);*/
   background-image: url(../nature/277384b5e8bbf6de4487e8ba2c01458b.jpg); 
-  background-size: cover;
-  background-position: center;
+  background-size: contain;
+  background-position: bottom;
 
     padding: 1.5em;
     border-radius: 40px;
