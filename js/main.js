@@ -73,13 +73,13 @@ inputSlider.addEventListener("input", updatePlanetOpacity);
 //RANDOM CARBON FACTS-------------------------------------------------------------------------------------------------
 
 let carbonPhrases = [
-  "you could potentially fill 2-5 fire extinguishers to save a couple of trees. ",
-  "you could potentially treat approximately 20-50 cubic meters of water sufficient 9 to 35 medium-sized dogs for a month.",
-  "you could potentially carbonate approximately to 5,0 liters of carbonated beverage. It would be approximately enough for 1 week for drinking water for a person with diabetes who needs to monitor his blood sugar levels carefully.",
-  "you could potentially cultivate 5-10 kg of algae biomass to produce thousand bottles of dietary supplements, to lower cholesterol levels, reduce inflammation, and support cardiovascular function, reducing the risk of heart disease.",
-  "you could potentially enrich a greenhouse covering approximately to 14.7 square meters & cultivate approximately 15-20 tomato plants meaning producing up to 200 kg of tomatoes. ",
-  "you could produce dry ice for scientific experiments & rapid distribution of vaccines worldwide. During the COVID-19 pandemic, dry ice played a crucial role in the distribution of mRNA vaccines and controlling the spread of the virus.",
-  "you could potentially supply CO2 for multiple hours of surgical procedures",
+  "you could potentially fill 2-5 fire extinguishers to<span> save a couple of trees.</span> ",
+  "you could potentially treat approximately <span>up to 50 cubic meters of water </span> sufficient for up to <span>35 medium-sized dogs for a month.</span>",
+  "you could potentially carbonate approximately <span> to 5,0 liters of carbonated beverage</span>. It would be approximately enough for 1 week for drinking water for a person with <span> diabetes</span> who needs to <span> monitor his blood sugar levels </span>carefully.",
+  "you could potentially cultivate <span>5-10 kg of algae biomass to produce thousand bottles</span> of dietary supplements, <span> to lower cholesterol levels, reduce inflammation, and support cardiovascular function, reducing the risk of heart disease.</span>",
+  "you could potentially enrich a greenhouse covering approximately to 14.7 square meters & cultivate approximately 15-20 tomato plants meaning producing  <span>up to 200 kg of tomatoes.</span> ",
+  "you could produce <span>dry ice for scientific experiments & rapid distribution of vaccines worldwide</span>. During the COVID-19 pandemic, dry ice played a crucial role in the distribution of mRNA vaccines and controlling the spread of the virus.",
+  "you could potentially supply CO2 for <span>multiple hours of surgical procedures</span>",
 ];
 
 let buttonCarbon = document.getElementById("button_carbon_facts");
