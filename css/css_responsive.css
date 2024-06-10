@@ -180,7 +180,18 @@
 
   p.written_task {
     width: 100%;
-}}
+}
+
+#calculationpage {
+
+    background-size: 200px;
+ 
+}
+
+
+
+
+}
 
 @media only screen and (max-width: 400px) {
   .grid {
