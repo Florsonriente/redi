@@ -547,11 +547,15 @@ body > div.carbonfactspage > h2:nth-child(3) {
   /*border: 1px solid black;*/
   /* background-image: radial-gradient(rgb(57 81 62 / 28%) 1px, transparent 2px);
     background-size: 32px 32px;
-    background-color: rgb(228, 228, 237);*/
-  background-image: url(../nature/277384b5e8bbf6de4487e8ba2c01458b.jpg); 
-  background-size: contain;
+    background-color: rgb(228, 228, 237);
+  background-image: url(../nature/277384b5e8bbf6de4487e8ba2c01458b.jpg);
+    background-size: contain;
   background-position: bottom;
+  */
+  background-image: url(../nature/qtmt_Create_an_image_that_perfectly_captures_the_essence_of_the_95992ffa-7599-4924-a55c-61e4eb95fc18.png); 
 
+  background-size: cover;
+  background-position: top;
     padding: 1.5em;
     border-radius: 40px;
   width: 400px;
@@ -561,10 +565,12 @@ body > div.carbonfactspage > h2:nth-child(3) {
 }
 .carbonfacts h2 {
   padding: 0em;
-
   text-align: center;
 }
 
+.carbonfacts span{
+  font-weight: 600;
+}
 
 .impactpage {
   /*  height:100vh;*/
