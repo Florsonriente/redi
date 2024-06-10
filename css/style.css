@@ -618,6 +618,7 @@ body > div.carbonfactspage > h2:nth-child(3) {
   padding: 3em;
   justify-content: center;
   position: relative;
+  display: none;
 }
 
 div.activities_all > div {
