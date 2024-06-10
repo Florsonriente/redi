@@ -391,7 +391,7 @@ h2 {
 }
 
 .subblockpics > img:nth-child(3) {
-  margin-bottom: -4em;
+  margin-bottom: -8em;
 }
 
 .subblockpics:nth-child(2) {
@@ -727,6 +727,7 @@ body > div.planetpage > div > div > span:nth-child(4) {
   /*background-image: url("https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/9d5218142352465.62659dff37688.gif");*/
   background-image: url("../nature/leaves.jpg");
   background-size: cover;
+  background-position: bottom;
   width: 100%;
   height:100%;
 }
