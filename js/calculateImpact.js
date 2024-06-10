@@ -77,7 +77,7 @@ for (let i = 0; i < closeButtons.length; i++) {
 
 
 const getSavedCarbon = function () {
-  const activityValue = [0.945, 0.27, 5.4, 4.6, 1.5, 0.05];
+  const activityValue = [0.945, 0.27, 5.4, 4.6, 0.547, 0.05];
   const sumSavedCarbon = Array.from(activities).reduce((sum, element, index) => {
     if (!element.checked) {
       sum = sum + activityValue[index];
@@ -86,7 +86,7 @@ const getSavedCarbon = function () {
     return Number(sum.toFixed(2));
   }, 0);
 
-  console.log("Result: ");
+  console.log("Result:");
   showSavedCarbon.innerHTML = sumSavedCarbon + "kg";
   //sumSavedCarbon.style.fontsize = "13em";
   //sumSavedCarbon.style.margintop = "0.5em";
