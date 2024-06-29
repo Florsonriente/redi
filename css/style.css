@@ -527,7 +527,7 @@ h2 {
 .carbontext h2 {
   width: 70%;
   text-align: left;
-  font-size: 3em;
+  font-size: var(--font-size);
   font-weight: 200;
   padding: 0;
 }
@@ -547,12 +547,12 @@ body > div.carbonfactspage > h2:nth-child(3) {
 
 /*IMPACT PAGE---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------*/
 
-#impactpage{
+/*#impactpage{
   background-image: url(https://i.pinimg.com/564x/44/01/54/440154c71d77ce71eafe64dac9447058.jpg);
     background-size: auto;
     background-repeat: no-repeat;
     background-position: top left;
-}
+}*/
 
 
 
@@ -566,12 +566,12 @@ body > div.carbonfactspage > h2:nth-child(3) {
     background-size: contain;
   background-position: bottom;
   */
-  background-image: url(../nature/qtmt_Create_an_image_that_perfectly_captures_the_essence_of_the_95992ffa-7599-4924-a55c-61e4eb95fc18.png); 
+  background-image: url(../nature/gabbea_photo_of_a_white_wall_with_a_few_soft_shadows_coming_fro_781ae67e-9cda-455e-9d08-20d1bd52a9e1.png);
 
   background-size: cover;
   background-position: top;
     padding: 1.5em;
-    border-radius: 40px;
+  /*  border-radius: 40px;*/
   width: 400px;
   padding: 2em 0.5em;
   height: 200px;
@@ -682,7 +682,7 @@ h5 .show_saved_carbon {
   font-weight: var(--scores-font-weight);
 
   min-height: 500px;
-  background-size: cover;
+  background-size: auto;
   background-repeat: no-repeat;
   display: flex;
   align-content: center;
@@ -692,7 +692,7 @@ h5 .show_saved_carbon {
   margin-top: 0.5em;
 
   background-image: url(../nature/d8761b2a59507d6931e31734274da928.jpg);
-  border-radius: 140px;
+ /* border-radius: 140px;*/
   background-repeat: no-repeat;
 }
 

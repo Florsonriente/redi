@@ -82,6 +82,7 @@ async function getCoordinates(city) {
       }
     } catch (error) {
       console.error("Error fetching air quality data:", error);
+      alert("Hey! Thanks for trying this feature! Unfortunately to be able to have this feature in my portfolio, I need to pay for this data to Ambee data provider. Feel free to go to Inspect tools and check the complex code or just go to my personal webpage https://florsonriente.github.io/alona/about.html and watch showreel;-)");
     }
   }
   
